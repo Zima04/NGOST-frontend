@@ -11,6 +11,7 @@
 <script>
 import VueHeader from './components/VueHeader.vue';
 import VueFooter from './components/VueFooter.vue'
+import '../src/assets/normalize.css';
 
 export default {
   name: 'app',
