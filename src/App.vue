@@ -35,6 +35,8 @@ export default {
       flex-direction: column;
       flex: 1 1 auto;
       overflow: auto;
-      margin: 0!important;
+  }
+  .content {
+    padding-top: 70px;
   }
 </style>

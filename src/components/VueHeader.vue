@@ -37,6 +37,10 @@
 
 <style lang="scss" scoped>
     .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         height: 70px;
         padding: 0 2rem;
         background: linear-gradient(to right, #FFF, #31183F);
