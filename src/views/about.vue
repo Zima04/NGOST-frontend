@@ -87,7 +87,13 @@
                 margin: 0;
                 text-align: left;
             }
+
+            @media only screen  and (max-width: 479px){ 
+                flex-direction: column;
+            }
+            
         }
+ 
     }
 
     button {
