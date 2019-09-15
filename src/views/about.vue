@@ -102,7 +102,7 @@
 
         &:focus,
         &:hover {
-            background: #3F3940;
+            background: #0099CC;
         }
 
     }
