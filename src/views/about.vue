@@ -73,8 +73,11 @@
     }
 
     .description {
+        background-color: white;
+        padding: 2rem;
+        margin-top: 1rem;
         &__title {
-            margin: 1rem 0;
+            margin: 0 0 1rem;
             text-align: center;
         }
         &__container {
