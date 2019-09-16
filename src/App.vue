@@ -2,6 +2,7 @@
   <div id="app">
     <VueHeader />
     <div class="content">
+      <VueDemand />
       <router-view></router-view>
     </div>
     <VueFooter />
@@ -10,12 +11,14 @@
 
 <script>
 import VueHeader from './components/VueHeader.vue';
-import VueFooter from './components/VueFooter.vue'
+import VueFooter from './components/VueFooter.vue';
+import VueDemand from './components/VueDemand.vue';
 
 export default {
   name: 'app',
   components: {
     VueHeader,
+    VueDemand,
     VueFooter
   }
 }
