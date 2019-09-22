@@ -1,16 +1,31 @@
 <template>
-    <div class="inline__block">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <div class="nav">
-            <p>Возможности</p>
-            <p>О ресурсе</p>
-            <p>Новости</p>
-            <router-link :to="{ name: 'sign-in' }">
-                <p class="sign_in_system">Вход в систему</p>
+    <header class="header">
+        <nav class="nav">
+            <router-link to='/'>
+                <img alt="Vue logo" src="../assets/logo.png">
             </router-link>
-        </div>
-
-    </div>
+            <ul>
+                <li>
+                    <router-link :to="{ name: 'opportunities' }">
+                        Возможности
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'about' }">
+                        О ресурсе
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'news' }">
+                        Новости
+                    </router-link>
+                </li>
+            </ul>
+            <router-link :to="{ name: 'sign-in' }">
+                Вход в систему
+            </router-link>
+        </nav>
+    </header>
 
 </template>
 
@@ -20,26 +35,45 @@
     }
 </script>
 
-<style scoped>
-    .inline__block {
-        background: linear-gradient(to right, #FFF, #31183F);
-        display: flex;
-        margin: 0 60px;
-        color: #FFF;
+<style lang="scss" scoped>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        padding: 0 2rem;
+        background: linear-gradient(to right, #FFF, #3F3955);
     }
+
     .nav {
-        margin-left: auto;
-        width: 1000px;
+        height: 70px;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline;
+                list-style: none;
+                padding: 0 2rem;
+            }
+
+        }
+        a {
+            color: rgb(235, 235, 235);
+            text-decoration: none;
+            
+            &:focus,
+            &:hover {
+                color: rgb(255, 255, 255);
+            }
+            
+        }
     }
-    img {
-        margin: 20px 20px;
-    }
-    p {
-        font-size: 20px;
-        margin: 40px 30px;
-    }
-    .sign_in_system {
-        margin-left: 300px;
-    }
+
 </style>

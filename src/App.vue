@@ -1,39 +1,48 @@
 <template>
   <div id="app">
     <VueHeader />
-    <div class="content">
-      <VueDemand />
+    <main class="content">
       <router-view></router-view>
-    </div>
+      <VueDemand />
+      <VueDocs />
+    </main>
     <VueFooter />
   </div>
 </template>
 
 <script>
-import VueHeader from './components/VueHeader.vue';
-import VueFooter from './components/VueFooter.vue';
-import VueDemand from './components/VueDemand.vue';
+import VueHeader from "./components/VueHeader.vue";
+import VueDemand from "./components/VueDemand.vue";
+import VueDocs from "./components/VueDocs.vue";
+import VueFooter from "./components/VueFooter.vue";
+import "../src/assets/normalize.css";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     VueHeader,
     VueDemand,
+    VueDocs,
     VueFooter
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+body {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-  .content {
-    margin: 0 60px;
-  }
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+.content {
+  padding-top: 70px;
+}
 </style>
