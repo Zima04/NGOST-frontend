@@ -17,7 +17,7 @@ export default {
   name: 'app',
   components: {
     VueHeader,
-    VueFooter
+    VueFooter,
   }
 }
 </script>
