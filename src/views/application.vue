@@ -29,7 +29,7 @@
                 items: [
                     {
                         name: 'Загрузка документа',
-                        linkTo: '/'
+                        linkTo: '/app/import-doc'
                     },
                     {
                         name: 'Формирование требований',

@@ -32,6 +32,10 @@ export default new Router({
                 {
                     path: 'account-state',
                     component: () => import('@/views/account-state')
+                },
+                {
+                    path: 'import-doc',
+                    component: () => import('@/views/import-doc')
                 }
             ]
         },
