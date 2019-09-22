@@ -17,7 +17,7 @@ export default {
   name: 'app',
   components: {
     VueHeader,
-    VueFooter
+    VueFooter,
   }
 }
 </script>
@@ -37,6 +37,7 @@ export default {
       overflow: auto;
   }
   .content {
+    flex: 1;
     padding-top: 70px;
   }
 </style>

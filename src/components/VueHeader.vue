@@ -41,6 +41,7 @@
         top: 0;
         left: 0;
         right: 0;
+        z-index: 10;
         height: 70px;
         padding: 0 2rem;
         background: linear-gradient(to right, #FFF, #3F3955);
