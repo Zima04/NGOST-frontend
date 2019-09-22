@@ -98,6 +98,7 @@
                 v-model="bank_address"
                 label="Адрес банка"
             />
+            <v-btn>Сохранить</v-btn>
         </v-form>
     </div>
 </template>
