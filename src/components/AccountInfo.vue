@@ -1,6 +1,6 @@
 <template>
-    <div>
-    <h1 class="headline">Личная информация</h1>
+    <v-container grid-list-xl>
+        <h1 class="headline">Личная информация</h1>
         <v-form
             ref="form"
             lazy-validation
@@ -69,7 +69,7 @@
                     <v-btn>Сохранить</v-btn>
             </v-container>
         </v-form>
-    </div>
+    </v-container>
 </template>
 
 <script>

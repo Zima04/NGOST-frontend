@@ -1,6 +1,6 @@
 <template>
     <v-container grid-list-xl>
-        <h1>Состояние счета</h1>
+        <h1 class="headline">Состояние счета</h1>
         <p>Баланс: 5</p>
         <p>Тариф старт <v-btn color="primary" disabled>Сменить тариф</v-btn></p>
 
