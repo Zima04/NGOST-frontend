@@ -29,6 +29,10 @@ export default new Router({
                     path: "my-profile",
                     component: () => import('@/views/profile')
                 },
+                {
+                    path: 'account-state',
+                    component: () => import('@/views/account-state')
+                }
             ]
         },
 

@@ -1,11 +1,13 @@
 <template>
-  <div id="app">
-    <VueHeader />
-    <main class="content">
-      <router-view></router-view>
-    </main>
-    <VueFooter />
-  </div>
+  <v-app>
+    <div id="app">
+      <VueHeader />
+      <main class="content">
+        <router-view></router-view>
+      </main>
+      <VueFooter />
+    </div>
+  </v-app>
 </template>
 
 <script>
