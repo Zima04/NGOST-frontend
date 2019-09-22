@@ -38,6 +38,7 @@
     import CompanyInfo from '../components/CompanyInfo.vue';
     
     export default {
+        name: 'profile',
         components: {
             AccountInfo,
             CompanyInfo

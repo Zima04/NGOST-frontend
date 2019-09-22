@@ -37,6 +37,7 @@ export default {
       overflow: auto;
   }
   .content {
+    display: flex;
     flex: 1;
     padding-top: 70px;
   }
