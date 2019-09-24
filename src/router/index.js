@@ -16,6 +16,11 @@ export default new Router({
             component: () => import('@/views/sign-up')
         },
         {
+            name: "restore-password",
+            path: "/restore-password",
+            component: () => import('@/views/restore-password')
+        },
+        {
             name: "about",
             path: "/about",
             component: () => import('@/views/about')
