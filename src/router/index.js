@@ -17,9 +17,39 @@ export default new Router({
             component: () => import('@/views/sign-up')
         },
         {
+            name: "restore-password",
+            path: "/restore-password",
+            component: () => import('@/views/restore-password')
+        },
+        {
+            name: "about",
+            path: "/about",
+            component: () => import('@/views/about')
+        },
+        {
+            name: "application",
+            path: "/app",
+            component: () => import('@/views/application'),
+            children: [
+                {
+                    path: "my-profile",
+                    component: () => import('@/views/profile')
+                },
+                {
+                    path: 'account-state',
+                    component: () => import('@/views/account-state')
+                },
+                {
+                    path: 'import-doc',
+                    component: () => import('@/views/import-doc')
+                }
+            ]
+        },
+
+        {
             name: 'create-demand',
             path: '/create-demand',
-            component: () => import('@/views/CreateDemand')
+            component: () => import('@/views/create-demand')
         }
     ]
 });

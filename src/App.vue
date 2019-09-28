@@ -1,11 +1,13 @@
 <template>
-  <div id="app">
-    <VueHeader />
-    <main class="content">
-      <router-view></router-view>
-    </main>
-    <VueFooter />
-  </div>
+  <v-app>
+    <div id="app">
+      <VueHeader />
+      <main class="content">
+        <router-view></router-view>
+      </main>
+      <VueFooter />
+    </div>
+  </v-app>
 </template>
 
 <script>
@@ -17,7 +19,7 @@ export default {
   name: 'app',
   components: {
     VueHeader,
-    VueFooter
+    VueFooter,
   }
 }
 </script>
@@ -37,6 +39,8 @@ export default {
       overflow: auto;
   }
   .content {
+    display: flex;
+    flex: 1;
     padding-top: 70px;
   }
 </style>

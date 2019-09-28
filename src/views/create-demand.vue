@@ -28,21 +28,21 @@
         Тип работы
       </div>
       <div class="type__select">
-        <b-radio v-model="radio"
+        <div
                  name="name"
                  native-value="Flint">
           Сборник трудов или журнал
-        </b-radio>
-        <b-radio v-model="radio"
+        </div>
+        <div
                  name="name"
                  native-value="Silver">
           Книга, диссертация, диплом, курсовая
-        </b-radio>
-        <b-radio v-model="radio"
+        </div>
+        <div
                  name="name"
                  native-value="Jack">
           Книга, диссертация, диплом, курсовая
-        </b-radio>
+        </div>
       </div>
     </div>
     <div class="settings">
@@ -51,19 +51,19 @@
       </div>
       <div class="settings__select">
         <div>
-          <b-checkbox>Колонтитулы</b-checkbox>
-          <b-checkbox>Текст</b-checkbox>
-          <b-checkbox>Заголовки</b-checkbox>
-          <b-checkbox>Содержание</b-checkbox>
+          <div>Колонтитулы</div>
+          <div>Текст</div>
+          <div>Заголовки</div>
+          <div>Содержание</div>
         </div>
         <div>
-          <b-checkbox>Таблицы</b-checkbox>
-          <b-checkbox>Формулы</b-checkbox>
-          <b-checkbox>Списки</b-checkbox>
-          <b-checkbox>Литература</b-checkbox>
+          <div>Таблицы</div>
+          <div>Формулы</div>
+          <div>Списки</div>
+          <div>Литература</div>
         </div>
         <div>
-          <b-checkbox>Рисунки</b-checkbox>
+          <div>Рисунки</div>
         </div>
       </div>
     </div>

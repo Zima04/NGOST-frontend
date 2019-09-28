@@ -48,6 +48,9 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @media only screen  and (max-width: 479px){ 
+            flex-direction: column;
+        }
     }
 
     .footer {
