@@ -1,103 +1,140 @@
 <template>
   <section class="documents">
-    <h1 class="main-title">Список требований</h1>
+    <h1 class="main-title">
+      Список требований
+    </h1>
     <div class="documents-switch">
       <ul class="documents-switch__list">
         <li class="documents-switch__item">
-          <a class="switch__btn switch__btn--blue" v-bind:href="url">Все</a>
+          <a
+            class="switch__btn switch__btn--blue"
+            :href="url"
+          >Все</a>
         </li>
         <li class="documents-switch__item">
-          <a class="switch__btn switch__btn--blue" v-bind:href="url">Стандартные</a>
+          <a
+            class="switch__btn switch__btn--blue"
+            :href="url"
+          >Стандартные</a>
         </li>
         <li class="documents-switch__item">
-          <a class="switch__btn switch__btn--blue" v-bind:href="url">Мое</a>
+          <a
+            class="switch__btn switch__btn--blue"
+            :href="url"
+          >Мое</a>
         </li>
       </ul>
       <form class="documents-switch__form">
-        <input type="text" class="documents-switch__input" />
-        <button class="switch__btn switch__btn--green">Поиск</button>
+        <input
+          type="text"
+          class="documents-switch__input"
+        >
+        <button class="switch__btn switch__btn--green">
+          Поиск
+        </button>
       </form>
     </div>
     <div class="documents__table-wrapper">
-      <button class="switch__btn switch__btn--red">Удалить...</button>
+      <button class="switch__btn switch__btn--red">
+        Удалить...
+      </button>
       <table class="documents__table documents__table--demand">
         <thead>
           <tr>
             <th class="documents__table-column">
-              <input type="checkbox" />
+              <input type="checkbox">
             </th>
-            <th class="documents__table-column">Название</th>
-            <th class="documents__table-column">Дата создания</th>
-            <th class="documents__table-column">Тип</th>
+            <th class="documents__table-column">
+              Название
+            </th>
+            <th class="documents__table-column">
+              Дата создания
+            </th>
+            <th class="documents__table-column">
+              Тип
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in rows" v-bind:key="row.id" class="documents__table-row">
+          <tr
+            v-for="row in rows"
+            :key="row.id"
+            class="documents__table-row"
+          >
             <td class="documents__table-column">
-              <input type="checkbox" />
+              <input type="checkbox">
             </td>
             <td class="documents__table-column">
-              <a v-bind:href="row.link" class="documents__table-link">{{ row.name }}</a>
+              <a
+                :href="row.link"
+                class="documents__table-link"
+              >{{ row.name }}</a>
             </td>
-            <td class="documents__table-column">{{ row.date }}</td>
-            <td class="documents__table-column">{{ row.type }}</td>
+            <td class="documents__table-column">
+              {{ row.date }}
+            </td>
+            <td class="documents__table-column">
+              {{ row.type }}
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="documents__footer">
-      <button class="switch__btn switch__btn--green">Создать требование</button>
+      <button class="switch__btn switch__btn--green">
+        Создать требование
+      </button>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "VueDemand",
-  data: function() {
+  name: 'VueDemand',
+  data() {
     return {
       rows: [
         {
-          id: "1",
-          link: "#!",
-          name: "IZDAT BSUIR",
-          date: "25.08.2019",
-          type: "Стандартное"
+          id: '1',
+          link: '#!',
+          name: 'IZDAT BSUIR',
+          date: '25.08.2019',
+          type: 'Стандартное'
         },
         {
-          id: "2",
-          link: "#!",
-          name: "English STP",
-          date: "11.06.2019",
-          type: "Стандартное"
+          id: '2',
+          link: '#!',
+          name: 'English STP',
+          date: '11.06.2019',
+          type: 'Стандартное'
         },
         {
-          id: "3",
-          link: "#!",
-          name: "IZDAT",
-          date: "01.07.2019",
-          type: "Стандартное"
+          id: '3',
+          link: '#!',
+          name: 'IZDAT',
+          date: '01.07.2019',
+          type: 'Стандартное'
         },
         {
-          id: "4",
-          link: "#!",
-          name: "STP BSEU",
-          date: "15.07.2019",
-          type: "Стандартное"
+          id: '4',
+          link: '#!',
+          name: 'STP BSEU',
+          date: '15.07.2019',
+          type: 'Стандартное'
         },
         {
-          id: "5",
-          link: "#!",
-          name: "MAGISTR",
-          date: "27.07.2019",
-          type: "Стандартное"
+          id: '5',
+          link: '#!',
+          name: 'MAGISTR',
+          date: '27.07.2019',
+          type: 'Стандартное'
         },
         {
-          id: "6",
-          link: "#!",
-          name: "STP BSUIR",
-          date: "27.07.2019",
-          type: "Стандартное"
+          id: '6',
+          link: '#!',
+          name: 'STP BSUIR',
+          date: '27.07.2019',
+          type: 'Стандартное'
         }
       ]
     };
