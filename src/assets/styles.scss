@@ -17,6 +17,13 @@ html {
     white-space: nowrap; /* added line */
   }
   
+  .main-title {
+    justify-self: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 35px;
+  }
+
   a {
     cursor: pointer;
   }

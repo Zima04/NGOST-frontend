@@ -190,13 +190,6 @@ export default {
   }
 }
 
-.main-title {
-  justify-self: center;
-  text-align: center;
-  font-weight: 500;
-  font-size: 35px;
-}
-
 .switch__btn {
   padding: 7px 12px;
   border: 1px solid transparent;
