@@ -4,6 +4,7 @@ import  Router  from "vue-router";
 Vue.use(Router);
 
 export default new Router({
+    mode: 'history',
     routes: [
         {
             name: "sign-in",
@@ -15,5 +16,10 @@ export default new Router({
             path: "/sign-up",
             component: () => import('@/views/sign-up')
         },
+        {
+            name: 'create-demand',
+            path: '/create-demand',
+            component: () => import('@/views/CreateDemand')
+        }
     ]
 });

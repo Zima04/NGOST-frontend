@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <div class="footer">
         <nav class="container">
             <ul class="list">
                 <li>
@@ -33,7 +33,7 @@
             </ul>
             <div/>
         </nav>
-    </footer>
+    </div>
 </template>
 
 <script>
@@ -58,7 +58,7 @@
         a {
             color: rgb(235, 235, 235);
             text-decoration: none;
-            
+
             &:focus,
             &:hover {
                 color: rgb(255, 255, 255);
