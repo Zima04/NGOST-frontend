@@ -1,12 +1,5 @@
 module.exports = {
   root: true,
-  plugins: [
-    'cypress'
-  ],
-  env: {
-    node: true,
-    'cypress/globals': true
-  },
   extends: ['@vue/airbnb', 'plugin:vue/recommended'],
   rules: {
     'no-console': 'error',
@@ -19,6 +12,7 @@ module.exports = {
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     'no-param-reassign': 'off',
     'no-plusplus': 'off',
+    'linebreak-style': 0
   },
   parserOptions: {
     parser: 'babel-eslint',
