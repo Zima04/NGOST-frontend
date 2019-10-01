@@ -58,7 +58,8 @@ export default {
   },
   data: () => ({
     email: '',
-    password: ''
+    password: '',
+    lastUser: null,
   }),
   computed: {
     passwordErrors() {
@@ -78,11 +79,31 @@ export default {
   methods: {
     submit() {
       this.$v.$touch();
+
+      if (!this.$v.$invalid) {
+        this.authUser();
+      }
     },
     clear() {
       this.$v.$reset();
       this.password = '';
       this.email = '';
+    },
+    authUser() {
+      let email = this.email;
+      let password = this.password;
+      this.$store
+              .dispatch("Auth/login", {email, password})
+              .then(() => {
+                this.$router.push("/");
+              })
+              .catch(err => {
+                this.clear();
+              });
+
+      window.setTimeout(() => {
+        this.lastUser = `${this.email}`;
+      }, 1500);
     },
   },
 };
