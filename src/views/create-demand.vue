@@ -20,7 +20,7 @@
         <div>Примечания</div>
         <div>Приложения</div>
         <div>Конструктор источников</div>
-        <div></div>
+        <div />
       </div>
     </div>
     <div class="type">
@@ -29,18 +29,21 @@
       </div>
       <div class="type__select">
         <div
-                 name="name"
-                 native-value="Flint">
+          name="name"
+          native-value="Flint"
+        >
           Сборник трудов или журнал
         </div>
         <div
-                 name="name"
-                 native-value="Silver">
+          name="name"
+          native-value="Silver"
+        >
           Книга, диссертация, диплом, курсовая
         </div>
         <div
-                 name="name"
-                 native-value="Jack">
+          name="name"
+          native-value="Jack"
+        >
           Книга, диссертация, диплом, курсовая
         </div>
       </div>
@@ -75,9 +78,9 @@ export default {
   data() {
     return {
 
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
