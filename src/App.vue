@@ -3,7 +3,7 @@
     <div id="app">
       <VueHeader />
       <main class="content">
-        <router-view></router-view>
+        <router-view />
       </main>
       <VueFooter />
     </div>
@@ -12,16 +12,16 @@
 
 <script>
 import VueHeader from './components/VueHeader.vue';
-import VueFooter from './components/VueFooter.vue'
-import '../src/assets/normalize.css';
+import VueFooter from './components/VueFooter.vue';
+import './assets/normalize.css';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     VueHeader,
     VueFooter,
   }
-}
+};
 </script>
 
 <style>

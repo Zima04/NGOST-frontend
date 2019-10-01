@@ -1,38 +1,40 @@
 <template>
-    <header class="header">
-        <nav class="nav">
-            <router-link to='/'>
-                <img alt="Vue logo" src="../assets/logo.png">
-            </router-link>
-            <ul>
-                <li>
-                    <router-link :to="{ name: 'opportunities' }">
-                        Возможности
-                    </router-link>
-                </li>
-                <li>
-                    <router-link :to="{ name: 'about' }">
-                        О ресурсе
-                    </router-link>
-                </li>
-                <li>
-                    <router-link :to="{ name: 'news' }">
-                        Новости
-                    </router-link>
-                </li>
-            </ul>
-            <router-link :to="{ name: 'sign-in' }">
-                Вход в систему
-            </router-link>
-        </nav>
-    </header>
-
+  <header class="header">
+    <nav class="nav">
+      <router-link to="/">
+        <img
+          alt="Vue logo"
+          src="../assets/logo.png"
+        >
+      </router-link>
+      <ul>
+        <li>
+          <router-link :to="{ name: 'opportunities' }">
+            Возможности
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'about' }">
+            О ресурсе
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'news' }">
+            Новости
+          </router-link>
+        </li>
+      </ul>
+      <router-link :to="{ name: 'sign-in' }">
+        Вход в систему
+      </router-link>
+    </nav>
+  </header>
 </template>
 
 <script>
-    export default {
-        name: "VueHeader"
-    }
+export default {
+  name: 'VueHeader'
+};
 </script>
 
 <style lang="scss" scoped>
@@ -68,12 +70,12 @@
         a {
             color: rgb(235, 235, 235);
             text-decoration: none;
-            
+
             &:focus,
             &:hover {
                 color: rgb(255, 255, 255);
             }
-            
+
         }
     }
 
