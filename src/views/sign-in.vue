@@ -88,16 +88,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 1024px;
-        padding: 2rem;
-        margin: 0 auto;
-        color: black;
-    }
-    .forgot_password {
-        margin-left: auto;
-    }
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1024px;
+      padding: 2rem;
+      margin: 0 auto;
+      color: black;
+  }
+  .forgot_password {
+      margin-left: auto;
+  }
 </style>

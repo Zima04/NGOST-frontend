@@ -1,11 +1,7 @@
 module.exports = {
   root: true,
-  plugins: [
-    'cypress'
-  ],
   env: {
-    node: true,
-    'cypress/globals': true
+    node: true
   },
   extends: ['@vue/airbnb', 'plugin:vue/recommended'],
   rules: {
@@ -19,6 +15,10 @@ module.exports = {
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     'no-param-reassign': 'off',
     'no-plusplus': 'off',
+    "vue/html-closing-bracket-newline": ["error", {
+      "multiline": "never"
+    }],
+    "vue/html-closing-bracket-spacing": 'off'
   },
   parserOptions: {
     parser: 'babel-eslint',
