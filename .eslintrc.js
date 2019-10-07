@@ -15,10 +15,8 @@ module.exports = {
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     'no-param-reassign': 'off',
     'no-plusplus': 'off',
-    "vue/html-closing-bracket-newline": ["error", {
-      "multiline": "never"
-    }],
-    "vue/html-closing-bracket-spacing": 'off'
+    'vue/html-closing-bracket-spacing': 'off',
+    'vue/html-closing-bracket-newline': 'off'
   },
   parserOptions: {
     parser: 'babel-eslint',

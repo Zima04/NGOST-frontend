@@ -1,46 +1,116 @@
 <template>
   <div class="demandCreate">
     <div class="tabs">
-      <v-btn-toggle group class="tabs__row">
-        <v-btn>Тип требований</v-btn>
-        <v-btn>Параметры страницы</v-btn>
-        <v-btn>Колонтитулы</v-btn>
-        <v-btn>Текст</v-btn>
-        <v-btn>Заголовки</v-btn>
-      </v-btn-toggle>
-      <v-btn-toggle class="tabs__row">
-        <v-btn>Содержание</v-btn>
-        <v-btn>Рисунки</v-btn>
-        <v-btn>Таблицы</v-btn>
-        <v-btn>Формулы</v-btn>
-        <v-btn>Списки</v-btn>
-      </v-btn-toggle>
-      <v-btn-toggle class="tabs__row">
-        <v-btn>Литература</v-btn>
-        <v-btn>Примечания</v-btn>
-        <v-btn>Приложения</v-btn>
-        <v-btn>Конструктор источников</v-btn>
-      </v-btn-toggle>
+      <div class="tabs__row">
+        <div class="tabs__btnGroup">
+          <v-btn
+            tile
+            @click="handleTab('typesDemand')">
+            Тип требований
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('pageParams')">
+            Параметры страницы
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('headersFooters')">
+            Колонтитулы
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Текст
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Заголовки
+          </v-btn>
+        </div>
+
+        <div class="tabs__btnGroup">
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Содержание
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Рисунки
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Таблицы
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('formuls')">
+            Формулы
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Списки
+          </v-btn>
+        </div>
+        <div class="tabs__btnGroup">
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Литература
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Примечания
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Приложения
+          </v-btn>
+          <v-btn
+            tile
+            @click="handleTab('')">
+            Конструктор источников
+          </v-btn>
+        </div>
+      </div>
     </div>
     <component
-      :is="TypesDemand">
-    </component>
-    <component
-      :is="HeadersFooters">
-    </component>
+      :is="components[currentTab]"
+    />
   </div>
 </template>
 
 <script>
 import TypesDemand from '@/components/CreateDemand/TypesDemand.vue';
 import HeadersFooters from '@/components/CreateDemand/HeadersFooters.vue';
+import PageParams from '@/components/CreateDemand/PageParams.vue';
+import Formuls from '@/components/CreateDemand/Formuls.vue';
 
 export default {
   data() {
     return {
       TypesDemand,
-      HeadersFooters
+      HeadersFooters,
+      currentTab: 'typesDemand',
+      components: {
+        typesDemand: TypesDemand,
+        headersFooters: HeadersFooters,
+        pageParams: PageParams,
+        formuls: Formuls,
+      }
     };
+  },
+  methods: {
+    handleTab(name) {
+      this.currentTab = name;
+    }
   }
 };
 </script>
@@ -54,11 +124,14 @@ export default {
 
     &__row {
       display: flex;
+      flex-direction: column;
+    }
 
-      &> div {
-        width: 150px;
-        border: 1px solid black;
-        padding: 5px;
+    &__btnGroup {
+      & > button {
+        height: 48px!important;
+        box-shadow: none;
+        border: 1px solid rgba(0, 0, 0, 0.12) !important;
       }
     }
   }
