@@ -25,7 +25,7 @@
           </v-btn>
           <v-btn
             tile
-            @click="handleTab('')">
+            @click="handleTab('headline')">
             Заголовки
           </v-btn>
         </div>
@@ -92,6 +92,7 @@ import TypesDemand from '@/components/CreateDemand/TypesDemand.vue';
 import HeadersFooters from '@/components/CreateDemand/HeadersFooters.vue';
 import PageParams from '@/components/CreateDemand/PageParams.vue';
 import Formuls from '@/components/CreateDemand/Formuls.vue';
+import Headline from '@/components/CreateDemand/Headline.vue';
 
 export default {
   data() {
@@ -104,6 +105,7 @@ export default {
         headersFooters: HeadersFooters,
         pageParams: PageParams,
         formuls: Formuls,
+        headline: Headline,
       }
     };
   },
