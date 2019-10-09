@@ -35,7 +35,7 @@ export default {
         },
         {
           name: 'Формирование требований',
-          linkTo: '/'
+          linkTo: '/app/create-demand'
         },
         {
           name: 'Список требований',
