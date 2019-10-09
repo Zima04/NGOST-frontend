@@ -42,14 +42,14 @@ export default new Router({
         {
           path: 'import-doc',
           component: () => import('@/views/import-doc')
+        },
+        {
+          name: 'create-demand',
+          path: 'create-demand',
+          component: () => import('@/views/create-demand')
         }
       ]
     },
 
-    {
-      name: 'create-demand',
-      path: '/create-demand',
-      component: () => import('@/views/create-demand')
-    }
   ]
 });
