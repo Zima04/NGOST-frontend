@@ -8,6 +8,10 @@ Vue.use(Vuelidate);
 
 Vue.config.productionTip = false;
 
+router.beforeEach((to, from, next) => {
+	document.title = `gost | ${to.meta.title}` || 'gost';
+	next();
+});
 
 new Vue({
   router,
