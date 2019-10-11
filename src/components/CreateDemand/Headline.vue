@@ -111,6 +111,7 @@
         </v-row>
       </v-col>
     </v-row>
+    <v-divider></v-divider>
     <v-row no-gutters>
       <v-col cols="12" md="2" align-self="start">
         <h2 class="title">Шрифт</h2>
@@ -195,6 +196,7 @@
         </v-row>
       </v-col>
     </v-row>
+    <v-divider></v-divider>
     <v-row no-gutters>
       <v-col cols="12" md="2" align-self="start">
         <h2 class="title">Нумерация</h2>
