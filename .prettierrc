@@ -1,0 +1,9 @@
+# .prettierrc
+# Use this file to define your defaults for prettier
+# For a list of all available options:
+# https://github.com/prettier/prettier#basic-configuration
+printWidth: 120
+singleQuote: true
+semi: true
+useTabs: true
+tabWidth: 2
