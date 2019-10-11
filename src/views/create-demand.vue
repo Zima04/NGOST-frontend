@@ -38,7 +38,7 @@
           </v-btn>
           <v-btn
             tile
-            @click="handleTab('')">
+            @click="handleTab('images')">
             Рисунки
           </v-btn>
           <v-btn
@@ -94,6 +94,7 @@ import PageParams from '@/components/CreateDemand/PageParams.vue';
 import Formuls from '@/components/CreateDemand/Formuls.vue';
 import Headline from '@/components/CreateDemand/Headline.vue';
 import TableContents from '@/components/CreateDemand/TableContents.vue';
+import Images from '@/components/CreateDemand/Images.vue';
 
 export default {
   data() {
@@ -107,7 +108,8 @@ export default {
         pageParams: PageParams,
         formuls: Formuls,
         headline: Headline,
-        tableContets:TableContents,
+        tableContets: TableContents,
+        images: Images,
       }
     };
   },
