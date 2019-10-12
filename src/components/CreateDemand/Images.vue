@@ -371,17 +371,17 @@
               v-model="fontType"
               dense
             >
-              <v-btn>
-                <v-icon>mdi-format-bold</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/8.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-italic</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/9.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-underline</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/10.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-color-fill</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/11.png" />
               </v-btn>
             </v-btn-toggle>
           </v-col>
@@ -390,17 +390,17 @@
               v-model="fontType"
               dense
             >
-              <v-btn>
-                <v-icon>mdi-format-bold</v-icon>
+							<v-btn class="square">
+                <img src="@/assets/demand/12.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-italic</v-icon>
+							<v-btn class="square">
+                <img src="@/assets/demand/13.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-underline</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/14.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-color-fill</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/15.png" />
               </v-btn>
             </v-btn-toggle>
           </v-col>
@@ -515,4 +515,8 @@ export default {
 </script>
 
 <style lang="scss">
+	.square {
+		width: 76px !important;
+		height: 76px !important;
+	}
 </style>
