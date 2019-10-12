@@ -1,5 +1,5 @@
 <template>
-  <v-container class="grey lighten-5 wrapper">
+  <div>
     <h1 class="headline">Заголовки</h1>
     <v-row no-gutters fluid align="center" justify="start">
       <v-col cols="12" md="2" align-self="start">
@@ -272,7 +272,7 @@
         </v-row>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -286,16 +286,16 @@ export default {
     field_title_main_interval: null,
     field_title_main_after: null,
     field_title_main_first: null,
-    field_title_main_firstan: null, 
+    field_title_main_firstan: null,
     field_title_main_second: null,
-    field_title_main_secondan: null, 
+    field_title_main_secondan: null,
     field_title_font_font: null,
     field_title_font_size: null,
     field_title_font_color: null,
     field_title_font_background: null,
     field_title_number_type2: null,
     field_title_number_view2: null,
-    field_title_number_ownview2: null, 
+    field_title_number_ownview2: null,
     weight: null,
   })
 }

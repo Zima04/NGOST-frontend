@@ -1,5 +1,5 @@
 <template>
-  <v-container class="grey lighten-5 wrapper">
+  <div>
     <h1 class="headline">Содержание</h1>
     <v-row no-gutters fluid align="center" justify="start">
       <v-col cols="12" md="2" align-self="start">
@@ -249,7 +249,7 @@
         </v-row>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>

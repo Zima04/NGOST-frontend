@@ -1,5 +1,5 @@
 <template>
-	<div class="demandCreate">
+	<div>
 		<v-tabs center-active>
 			<v-tab tile @click="handleTab('typesDemand')">Тип требований</v-tab>
 			<v-tab tile @click="handleTab('pageParams')">Параметры страницы</v-tab>
@@ -16,9 +16,9 @@
 			<v-tab tile @click="handleTab('')">Приложения</v-tab>
 			<v-tab tile @click="handleTab('')">Конструктор источников</v-tab>
 		</v-tabs>
-		<div class="tabs-content">
+		<v-container class="grey lighten-5 wrapper">
 			<component :is="components[currentTab]" />
-		</div>
+		</v-container>
 	</div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss">
-.demandCreate {
-	padding: 10px;
-}
+	.tabs-content {
+		padding: 1rem;
+	}
 </style>
