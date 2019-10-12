@@ -1,5 +1,5 @@
 <template>
-  <v-container class="grey lighten-5 wrapper">
+  <div>
     <h1 class="headline">Заголовки</h1>
     <v-row no-gutters fluid align="center" justify="start">
       <v-col cols="12" md="2" align-self="start">
@@ -222,17 +222,17 @@
               v-model="fontType"
               dense
             >
-              <v-btn>
-                <v-icon>mdi-format-bold</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/8.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-italic</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/9.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-underline</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/10.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-color-fill</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/11.png" />
               </v-btn>
             </v-btn-toggle>
           </v-col>
@@ -241,17 +241,17 @@
               v-model="fontType"
               dense
             >
-              <v-btn>
-                <v-icon>mdi-format-bold</v-icon>
+							<v-btn class="square">
+                <img src="@/assets/demand/12.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-italic</v-icon>
+							<v-btn class="square">
+                <img src="@/assets/demand/13.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-underline</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/14.png" />
               </v-btn>
-              <v-btn>
-                <v-icon>mdi-format-color-fill</v-icon>
+              <v-btn class="square">
+                <img src="@/assets/demand/15.png" />
               </v-btn>
             </v-btn-toggle>
           </v-col>
@@ -272,7 +272,7 @@
         </v-row>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -286,20 +286,24 @@ export default {
     field_title_main_interval: null,
     field_title_main_after: null,
     field_title_main_first: null,
-    field_title_main_firstan: null, 
+    field_title_main_firstan: null,
     field_title_main_second: null,
-    field_title_main_secondan: null, 
+    field_title_main_secondan: null,
     field_title_font_font: null,
     field_title_font_size: null,
     field_title_font_color: null,
     field_title_font_background: null,
     field_title_number_type2: null,
     field_title_number_view2: null,
-    field_title_number_ownview2: null, 
+    field_title_number_ownview2: null,
     weight: null,
   })
 }
 </script>
 
 <style lang="scss">
+	.square {
+		width: 76px !important;
+		height: 76px !important;
+	}
 </style>

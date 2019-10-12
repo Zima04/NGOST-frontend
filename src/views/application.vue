@@ -71,6 +71,6 @@ export default {
         height: 100%;
     }
     .application {
-        width: 100%;
+        width: calc(100% - 256px);
     }
 </style>
