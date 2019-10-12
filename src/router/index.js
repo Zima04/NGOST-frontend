@@ -8,22 +8,34 @@ export default new Router({
   routes: [
     {
       name: 'sign-in',
-      path: '/sign-in',
+			path: '/sign-in',
+			meta: {
+				title: 'Авторизация'
+			},
       component: () => import('@/views/sign-in')
     },
     {
       name: 'sign-up',
-      path: '/sign-up',
+			path: '/sign-up',
+			meta: {
+				title: 'Регистрация'
+			},
       component: () => import('@/views/sign-up')
     },
     {
       name: 'restore-password',
-      path: '/restore-password',
+			path: '/restore-password',
+			meta: {
+				title: 'Восстановление пароля'
+			},
       component: () => import('@/views/restore-password')
     },
     {
       name: 'about',
-      path: '/about',
+			path: '/about',
+			meta: {
+				title: 'О проекте'
+			},
       component: () => import('@/views/about')
     },
     {
@@ -31,21 +43,36 @@ export default new Router({
       path: '/app',
       component: () => import('@/views/application'),
       children: [
-        {
-          path: 'my-profile',
+				{
+					name: 'my-profile',
+					path: 'my-profile',
+					meta: {
+						title: 'Личная информация'
+					},
           component: () => import('@/views/profile')
         },
-        {
-          path: 'account-state',
+				{
+					name: 'account-state',
+					path: 'account-state',
+					meta: {
+						title: 'Состояние счета'
+					},
           component: () => import('@/views/account-state')
         },
-        {
-          path: 'import-doc',
+				{
+					name: 'import-doc',
+					path: 'import-doc',
+					meta: {
+						title: 'Загрузка документа'
+					},
           component: () => import('@/views/import-doc')
         },
         {
           name: 'create-demand',
-          path: 'create-demand',
+					path: 'create-demand',
+					meta: {
+						title: 'Формирование требований'
+					},
           component: () => import('@/views/create-demand')
         }
       ]
