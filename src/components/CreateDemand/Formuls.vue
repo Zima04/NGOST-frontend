@@ -182,31 +182,25 @@
         <div class="d-flex flex-column">
           <span>Допустимый символ умножить</span>
           <v-radio-group
-              v-model="radioGroup">
+            v-model="radioGroup">
             <v-radio
-                label="˟">
-            </v-radio>
+              label="˟"/>
             <v-radio
-                label="·">
-            </v-radio>
+              label="·"/>
             <v-radio
-                label="*">
-            </v-radio>
+              label="*"/>
           </v-radio-group>
         </div>
         <div class="d-flex flex-column">
           <span>Допустимый символ разделить</span>
           <v-radio-group
-              v-model="radioGroup">
+            v-model="radioGroup">
             <v-radio
-                label="/">
-            </v-radio>
+              label="/"/>
             <v-radio
-                label="÷">
-            </v-radio>
+              label="÷"/>
             <v-radio
-                label="Проставить номер для числовых расчетов">
-            </v-radio>
+              label="Проставить номер для числовых расчетов"/>
           </v-radio-group>
         </div>
       </div>

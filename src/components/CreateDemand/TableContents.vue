@@ -1,12 +1,27 @@
 <template>
   <div>
-    <h1 class="headline">Содержание</h1>
-    <v-row no-gutters fluid align="center" justify="start">
-      <v-col cols="12" md="2" align-self="start">
-        <h2 class="title">Основное</h2>
+    <h1 class="headline">
+      Содержание
+    </h1>
+    <v-row
+      no-gutters
+      fluid
+      align="center"
+      justify="start">
+      <v-col
+        cols="12"
+        md="2"
+        align-self="start">
+        <h2 class="title">
+          Основное
+        </h2>
       </v-col>
-      <v-col cols="12" md="5">
-        <v-row no-gutters align="center">
+      <v-col
+        cols="12"
+        md="5">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Расположение содержания</span>
           </v-col>
@@ -21,7 +36,9 @@
             label="Применить настройки основного текста"
           />
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Символы от текста до цифр</span>
           </v-col>
@@ -32,7 +49,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Заголовок содержания</span>
           </v-col>
@@ -43,13 +62,17 @@
               dense />
           </v-col>
         </v-row>
-        <v-divider></v-divider>
+        <v-divider/>
         <v-row align="center">
           <v-col cols="12">
-            <h3 class="subtitle">Заголовки первого уровня</h3>
+            <h3 class="subtitle">
+              Заголовки первого уровня
+            </h3>
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Первая строка</span>
           </v-col>
@@ -61,12 +84,14 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Вторая строка</span>
           </v-col>
@@ -78,18 +103,22 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
-        <v-divider></v-divider>
+        <v-divider/>
         <v-row align="center">
           <v-col cols="12">
-            <h3 class="subtitle">Заголовки второго уровня</h3>
+            <h3 class="subtitle">
+              Заголовки второго уровня
+            </h3>
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Первая строка</span>
           </v-col>
@@ -101,12 +130,14 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Вторая строка</span>
           </v-col>
@@ -118,18 +149,22 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
-        <v-divider></v-divider>
+        <v-divider/>
         <v-row align="center">
           <v-col cols="12">
-            <h3 class="subtitle">Заголовки третьего уровня</h3>
+            <h3 class="subtitle">
+              Заголовки третьего уровня
+            </h3>
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Первая строка</span>
           </v-col>
@@ -141,12 +176,14 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Вторая строка</span>
           </v-col>
@@ -158,19 +195,28 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
       </v-col>
     </v-row>
     <v-row no-gutters>
-      <v-col cols="12" md="2" align-self="start">
-        <h2 class="title">Шрифт</h2>
+      <v-col
+        cols="12"
+        md="2"
+        align-self="start">
+        <h2 class="title">
+          Шрифт
+        </h2>
       </v-col>
-      <v-col cols="12" md="5">
-        <v-row no-gutters align="center">
+      <v-col
+        cols="12"
+        md="5">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <v-select
               id="spelling-1"
@@ -184,7 +230,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="5">
             <v-btn-toggle
               v-model="fontType"
@@ -276,7 +324,7 @@ export default {
     field_contents_font_color: null,
     field_contents_font_background: null,
   })
-}
+};
 </script>
 
 <style>

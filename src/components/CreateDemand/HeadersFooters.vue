@@ -37,10 +37,10 @@
             </v-btn>
           </v-btn-toggle>
           <v-btn-toggle
-              v-model="fontType"
-              class="text__paramsText"
-              dense
-              multiple>
+            v-model="fontType"
+            class="text__paramsText"
+            dense
+            multiple>
             <v-btn>
               <v-icon>mdi-format-bold</v-icon>
             </v-btn>
@@ -92,13 +92,13 @@
           <div class="filtersPage__text">
             Начать с
           </div>
-          <v-text-field></v-text-field>
+          <v-text-field/>
         </div>
         <div class="filtersPage__end">
           <div class="filtersPage__text">
             Пропустить с
           </div>
-          <v-text-field></v-text-field>
+          <v-text-field/>
         </div>
       </div>
     </div>
@@ -108,7 +108,7 @@
         номера страницы
       </div>
       <div class="item__data">
-        <v-text-field></v-text-field> мм
+        <v-text-field/> мм
       </div>
     </div>
   </div>

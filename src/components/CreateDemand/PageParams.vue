@@ -5,7 +5,7 @@
         Название *
       </div>
       <div class="pageParams__info">
-        <v-text-field></v-text-field>
+        <v-text-field/>
       </div>
     </div>
     <div class="d-flex">
@@ -13,7 +13,7 @@
         Примечание
       </div>
       <div class="pageParams__info">
-        <v-text-field></v-text-field>
+        <v-text-field/>
       </div>
     </div>
     <div class="d-flex">
@@ -32,11 +32,15 @@
       </div>
       <div class="d-flex flex-column">
         <div class="d-flex">
-          <v-text-field class="mr-4" label="Верхнее"/>
+          <v-text-field
+            class="mr-4"
+            label="Верхнее"/>
           <v-text-field label="Левое"/>
         </div>
         <div class="d-flex">
-          <v-text-field class="mr-4" label="Нижнее"/>
+          <v-text-field
+            class="mr-4"
+            label="Нижнее"/>
           <v-text-field label="Правое"/>
         </div>
       </div>

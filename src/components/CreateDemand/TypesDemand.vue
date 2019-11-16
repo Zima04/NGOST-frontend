@@ -7,14 +7,11 @@
       <v-radio-group
         v-model="radioGroup">
         <v-radio
-          label="Сборник трудов или журнал">
-        </v-radio>
+          label="Сборник трудов или журнал"/>
         <v-radio
-          label="Книга, диссертация, диплом, курсовая">
-        </v-radio>
+          label="Книга, диссертация, диплом, курсовая"/>
         <v-radio
-          label="Книга, диссертация, диплом, курсовая">
-        </v-radio>
+          label="Книга, диссертация, диплом, курсовая"/>
       </v-radio-group>
     </div>
     <div class="settings">

@@ -1,12 +1,27 @@
 <template>
   <div>
-    <h1 class="headline">Заголовки</h1>
-    <v-row no-gutters fluid align="center" justify="start">
-      <v-col cols="12" md="2" align-self="start">
-        <h2 class="title">Основное</h2>
+    <h1 class="headline">
+      Заголовки
+    </h1>
+    <v-row
+      no-gutters
+      fluid
+      align="center"
+      justify="start">
+      <v-col
+        cols="12"
+        md="2"
+        align-self="start">
+        <h2 class="title">
+          Основное
+        </h2>
       </v-col>
-      <v-col cols="12" md="5">
-        <v-row no-gutters align="center">
+      <v-col
+        cols="12"
+        md="5">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Уровень заголовка</span>
           </v-col>
@@ -17,7 +32,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Написание</span>
           </v-col>
@@ -28,7 +45,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Шаблон нумерации заголовка</span>
           </v-col>
@@ -39,7 +58,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Свой вариант</span>
           </v-col>
@@ -48,12 +69,14 @@
               v-model="brief_name"
             />
           </v-col>
-           <v-checkbox
+          <v-checkbox
             v-model="info_change"
             label="Применить настройки основного текста"
           />
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Интервал до заголовка</span>
           </v-col>
@@ -64,7 +87,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Интервал после заголовка</span>
           </v-col>
@@ -75,7 +100,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Первая строка</span>
           </v-col>
@@ -87,12 +114,14 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Вторая строка</span>
           </v-col>
@@ -104,20 +133,29 @@
           </v-col>
           <v-col cols="4">
             <v-text-field
-              label="мм"
               v-model="brief_name"
+              label="мм"
             />
           </v-col>
         </v-row>
       </v-col>
     </v-row>
-    <v-divider></v-divider>
+    <v-divider/>
     <v-row no-gutters>
-      <v-col cols="12" md="2" align-self="start">
-        <h2 class="title">Шрифт</h2>
+      <v-col
+        cols="12"
+        md="2"
+        align-self="start">
+        <h2 class="title">
+          Шрифт
+        </h2>
       </v-col>
-      <v-col cols="12" md="5">
-        <v-row no-gutters align="center">
+      <v-col
+        cols="12"
+        md="5">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <v-select
               id="spelling-1"
@@ -131,7 +169,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="5">
             <v-btn-toggle
               v-model="fontType"
@@ -196,13 +236,22 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-divider></v-divider>
+    <v-divider/>
     <v-row no-gutters>
-      <v-col cols="12" md="2" align-self="start">
-        <h2 class="title">Нумерация</h2>
+      <v-col
+        cols="12"
+        md="2"
+        align-self="start">
+        <h2 class="title">
+          Нумерация
+        </h2>
       </v-col>
-      <v-col cols="12" md="5">
-        <v-row no-gutters align="center">
+      <v-col
+        cols="12"
+        md="5">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Тип нумерации</span>
           </v-col>
@@ -213,7 +262,9 @@
               dense />
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="12">
             <span>Формат номеров</span>
           </v-col>
@@ -223,16 +274,16 @@
               dense
             >
               <v-btn class="square">
-                <img src="@/assets/demand/8.png" />
+                <img src="@/assets/demand/8.png" >
               </v-btn>
               <v-btn class="square">
-                <img src="@/assets/demand/9.png" />
+                <img src="@/assets/demand/9.png" >
               </v-btn>
               <v-btn class="square">
-                <img src="@/assets/demand/10.png" />
+                <img src="@/assets/demand/10.png" >
               </v-btn>
               <v-btn class="square">
-                <img src="@/assets/demand/11.png" />
+                <img src="@/assets/demand/11.png" >
               </v-btn>
             </v-btn-toggle>
           </v-col>
@@ -241,22 +292,24 @@
               v-model="fontType"
               dense
             >
-							<v-btn class="square">
-                <img src="@/assets/demand/12.png" />
-              </v-btn>
-							<v-btn class="square">
-                <img src="@/assets/demand/13.png" />
+              <v-btn class="square">
+                <img src="@/assets/demand/12.png" >
               </v-btn>
               <v-btn class="square">
-                <img src="@/assets/demand/14.png" />
+                <img src="@/assets/demand/13.png" >
               </v-btn>
               <v-btn class="square">
-                <img src="@/assets/demand/15.png" />
+                <img src="@/assets/demand/14.png" >
+              </v-btn>
+              <v-btn class="square">
+                <img src="@/assets/demand/15.png" >
               </v-btn>
             </v-btn-toggle>
           </v-col>
         </v-row>
-        <v-row no-gutters align="center">
+        <v-row
+          no-gutters
+          align="center">
           <v-col cols="4">
             <span>Свой формат номера</span>
           </v-col>
@@ -265,7 +318,7 @@
               v-model="brief_name"
             />
           </v-col>
-           <v-checkbox
+          <v-checkbox
             v-model="info_change"
             label="Применить настройки основного текста"
           />
@@ -298,7 +351,7 @@ export default {
     field_title_number_ownview2: null,
     weight: null,
   })
-}
+};
 </script>
 
 <style lang="scss">
