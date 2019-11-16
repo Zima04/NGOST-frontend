@@ -1,7 +1,86 @@
 <template>
 	<div class="container">
 		<div class="column">
-			<div class="demo-title">Normal</div>
+			<div class="post-module">
+				<div class="thumbnail">
+					<div class="date">
+						<div class="day">27</div>
+						<div class="month">Mar</div>
+					</div>
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" />
+				</div>
+				<div class="post-content">
+					<div class="category">Photos</div>
+					<h1 class="title">City Lights in New York</h1>
+					<h2 class="sub_title">The city that never sleeps.</h2>
+					<p class="description">
+						New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments,
+						magnificent buildings and countless dazzling skyscrapers.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="post-module">
+				<div class="thumbnail">
+					<div class="date">
+						<div class="day">27</div>
+						<div class="month">Mar</div>
+					</div>
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" />
+				</div>
+				<div class="post-content">
+					<div class="category">Photos</div>
+					<h1 class="title">City Lights in New York</h1>
+					<h2 class="sub_title">The city that never sleeps.</h2>
+					<p class="description">
+						New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments,
+						magnificent buildings and countless dazzling skyscrapers.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="post-module">
+				<div class="thumbnail">
+					<div class="date">
+						<div class="day">27</div>
+						<div class="month">Mar</div>
+					</div>
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" />
+				</div>
+				<div class="post-content">
+					<div class="category">Photos</div>
+					<h1 class="title">City Lights in New York</h1>
+					<h2 class="sub_title">The city that never sleeps.</h2>
+					<p class="description">
+						New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments,
+						magnificent buildings and countless dazzling skyscrapers.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="post-module">
+				<div class="thumbnail">
+					<div class="date">
+						<div class="day">27</div>
+						<div class="month">Mar</div>
+					</div>
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" />
+				</div>
+				<div class="post-content">
+					<div class="category">Photos</div>
+					<h1 class="title">City Lights in New York</h1>
+					<h2 class="sub_title">The city that never sleeps.</h2>
+					<p class="description">
+						New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments,
+						magnificent buildings and countless dazzling skyscrapers.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
 			<div class="post-module">
 				<div class="thumbnail">
 					<div class="date">
@@ -52,11 +131,11 @@ $light_gray: lighten($black, 60%);
 	border-radius: $tl-radius $tr-radius $bl-radius $br-radius;
 }
 
-@mixin box-shadow($h-shadow: 0px, $v-shadow: 1px, $blur: 2px, $spread: 0px, $color: fade($black, 15%)) {
+@mixin box-shadow($h-shadow: 0px, $v-shadow: 1px, $blur: 2px, $spread: 0px, $color: fade-out($black, 0.85)) {
 	box-shadow: $h-shadow $v-shadow $blur $spread $color;
 }
 
-@mixin inner-box-shadow($h-shadow: 0px, $v-shadow: 1px, $blur: 2px, $spread: 0px, $color: fade($black, 15%)) {
+@mixin inner-box-shadow($h-shadow: 0px, $v-shadow: 1px, $blur: 2px, $spread: 0px, $color: fade-out($black, 0.85)) {
 	box-shadow: inset $h-shadow $v-shadow $blur $spread $color;
 }
 
@@ -87,10 +166,11 @@ $light_gray: lighten($black, 60%);
 	@include transitions;
 
 	&:hover {
+		@include box-shadow($blur: 35px, $color: fade-out($black, 0.7));
 		.thumbnail {
 			img {
 				transform: scale(1.1);
-				opacity: 6;
+				opacity: 0.6;
 			}
 		}
 		.post-content {
@@ -180,30 +260,19 @@ $light_gray: lighten($black, 60%);
 }
 
 .container {
-	max-width: 800px;
-	min-width: 640px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 2rem;
 	margin: 0 auto;
 	font-size: 14px;
 
-	&:before,
-	&:after {
-		content: '';
-		display: block;
-		clear: both;
-	}
 	.column {
-		width: 50%;
-		padding: 0 25px;
+		width: 25%;
+		padding: 1rem;
 		@include box-size;
-		float: left;
-		.demo-title {
-			margin: 0 0 15px;
-			color: $gray;
-			font-size: 18px;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
 	}
+
 	.info {
 		width: 300px;
 		margin: 50px auto;
