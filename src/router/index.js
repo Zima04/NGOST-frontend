@@ -84,6 +84,24 @@ export default new Router({
 					component: () => import('@/views/create-demand')
 				}
 			]
+		},
+		{
+			name: 'admin',
+			path: '/admin',
+			component: () => import('@/views/admin/admin'),
+			children: [
+				{
+					name: 'news',
+					path: 'news',
+					meta: {
+						title: 'Редактирование новостей'
+					},
+					component: () => import('@/views/admin/news-list'),
+					children: [
+						
+					]
+				}
+			]
 		}
 	]
 });
