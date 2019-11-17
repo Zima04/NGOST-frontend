@@ -1,34 +1,99 @@
 <template>
 	<div class="container">
-		<form>
+		<h1 class="headline">
+			Создание новости
+		</h1>
+		<form v-on:submit.prevent="onSubmit">
 			<div class="form-group">
-				<h2>Название</h2>
-				<input type="text" />
+				<v-text-field
+					label="Заголовок"
+					v-model="title"
+					@input="$v.title.$touch()"
+					@blur="$v.title.$touch()"
+					:rules="required"
+				/>
 			</div>
 			<div class="form-group">
-				<h2>Дата</h2>
-				<input type="text" />
+				<v-text-field
+					label="Краткое описание"
+					v-model="short_desc"
+					@input="$v.short_desc.$touch()"
+					@blur="$v.short_desc.$touch()"
+					:rules="required"
+				/>
 			</div>
 			<div class="form-group">
-				<h2>Текст предпоказа</h2>
-				<input type="text" />
+				<v-file-input label="Изображение" accept="image/*" v-model="image_holder" />
 			</div>
 			<div class="form-group">
 				<h2>Содержмое новости</h2>
-				<tinymce-editor api-key="API_KEY" :init="{ plugins: 'wordcount' }"></tinymce-editor>
+				<tinymce-editor :init="{ plugins: 'wordcount' }" v-model="description"></tinymce-editor>
 			</div>
+			<v-btn color="primary" type="submit">Сохранить</v-btn>
 		</form>
 	</div>
 </template>
 
 <script>
 import Editor from '@tinymce/tinymce-vue';
+import { validationMixin } from 'vuelidate';
+import { required, email } from 'vuelidate/lib/validators';
+import { async } from 'q';
+
 export default {
 	name: 'NewsEdit',
-	data() {
-		return {};
+	mixins: [validationMixin],
+	validations: {
+		title: { required },
+		description: { required },
+		short_desc: { required }
 	},
-	methods: {},
+	data: () => ({
+		title: '',
+		description: '',
+		short_desc: '',
+		image_holder: null,
+		required: [v => !!v || 'Field is required']
+	}),
+	methods: {
+		async onSubmit() {
+			try {
+				let imageId = null;
+				if (this.image_holder) {
+					const imageResponse = await this.saveImage();
+					imageId = imageResponse.id;
+				}
+				const response = await this.saveNews(imageId);
+			} catch (error) {
+				console.log(error);
+			}
+		},
+		async saveNews(imageId) {
+			return fetch('/api/news', {
+				method: 'POST',
+				body: JSON.stringify({
+					title: this.title,
+					description: this.description,
+					image: imageId,
+					short_desc: this.short_desc
+				})
+			});
+		},
+		async saveImage() {
+			const formData = new FormData();
+			formData.append('file', this.image_holder);
+			return fetch('/api/media', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				body: formData
+			});
+		}
+	},
+	created: () => {
+		console.log('eee');
+	},
 	components: {
 		'tinymce-editor': Editor
 	}

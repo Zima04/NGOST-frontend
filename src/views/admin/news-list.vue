@@ -1,11 +1,8 @@
 <template>
 	<div>
+		<v-btn>Добавить</v-btn>
 		<div class="container">
-			<NewsItem is-edit />
-			<NewsItem is-edit />
-			<NewsItem is-edit />
-			<NewsItem is-edit />
-			<NewsItem is-edit />
+			<NewsItem v-for="(item, index) in news" v-bind:index="index" v-bind:key="item.id" />
 		</div>
 	</div>
 </template>
@@ -18,9 +15,26 @@ export default {
 		NewsItem
 	},
 	data() {
-		return {};
+		return {
+			isLoading: true,
+			error: false,
+			news: []
+		};
 	},
-	methods: {}
+	created() {
+		this.fetchData();
+	},
+	methods: {
+		fetchData() {
+			this.error = this.loading = true;
+			fetch('/api/news')
+				.then(response => response.json())
+				.then(news => {
+					this.news = news;
+				})
+				.catch(err => {});
+		}
+	}
 };
 </script>
 <style lang="scss" scoped>
