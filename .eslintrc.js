@@ -3,7 +3,7 @@ module.exports = {
 	env: {
 		node: true
 	},
-	extends: ['@vue/airbnb', 'plugin:vue/recommended'],
+	extends: ['plugin:vue/recommended'],
 	rules: {
 		indent: [2, 'tab', { SwitchCase: 1 }],
 		'no-tabs': 0,
