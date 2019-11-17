@@ -91,16 +91,21 @@ export default new Router({
 			component: () => import('@/views/admin/admin'),
 			children: [
 				{
-					name: 'news',
+					name: 'admin-news',
 					path: 'news',
 					meta: {
 						title: 'Редактирование новостей'
 					},
-					component: () => import('@/views/admin/news-list'),
-					children: [
-						
-					]
-				}
+					component: () => import('@/views/admin/news-list')
+				},
+				{
+					name: 'edit-news',
+					path: 'news/edit/:id?',
+					meta: {
+						title: 'Редактирование новости'
+					},
+					component: () => import('@/views/admin/news-edit')
+				},
 			]
 		}
 	]
