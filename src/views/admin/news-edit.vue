@@ -29,7 +29,9 @@
 				<h2>Содержмое новости</h2>
 				<tinymce-editor :init="{ plugins: 'wordcount' }" v-model="description"></tinymce-editor>
 			</div>
-			<v-btn color="primary" type="submit">Сохранить</v-btn>
+			<div class="controls">
+				<v-btn color="primary" type="submit">Сохранить</v-btn>
+			</div>
 		</form>
 	</div>
 </template>
@@ -94,4 +96,8 @@ export default {
 	}
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+	.controls {
+		margin: .5rem 0;
+	}
+</style>

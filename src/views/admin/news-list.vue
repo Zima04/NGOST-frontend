@@ -1,59 +1,86 @@
 <template>
-	<div>
-		<v-btn>Добавить</v-btn>
-		<div class="container">
-			<NewsItem v-for="(item, index) in news" v-bind:index="index" v-bind:key="item.id" />
+	<div class="container">
+		<div class="title-wrapper">
+			<h1 class="headline">
+				Новости
+			</h1>
+			<v-btn color="primary" small link to="news/edit">Добавить</v-btn>
 		</div>
+		<v-data-table
+			:headers="headers"
+			:items="news"
+			:items-per-page="5"
+			class="elevation-1"
+			hide-default-footer
+			:loading="isLoading"
+			loading-text="Loading... Please wait"
+		>
+		</v-data-table>
 	</div>
 </template>
 
 <script>
-import NewsItem from '@/components/NewsItem';
+import axios from 'axios';
+
 export default {
 	name: 'NewsList',
-	components: {
-		NewsItem
-	},
 	data() {
 		return {
 			isLoading: true,
 			error: false,
-			news: []
+			news: [],
+			headers: [
+				{
+					text: 'Заголовок',
+					align: 'left',
+					sortable: false,
+					value: 'title'
+				},
+				{
+					text: 'Краткое описание',
+					align: 'center',
+					sortable: false,
+					value: 'short_descr'
+				},
+				{
+					text: 'Дата создания',
+					align: 'center',
+					sortable: false,
+					value: 'title'
+				}
+			]
 		};
 	},
 	created() {
+		console.log('sss');
 		this.fetchData();
 	},
 	methods: {
-		fetchData() {
-			this.error = this.loading = true;
-			fetch('/api/news')
-				.then(response => response.json())
-				.then(news => {
-					this.news = news;
-				})
-				.catch(err => {});
+		async fetchData() {
+			this.error = false;
+			this.isLoading = true;
+			try {
+				const response = await this.getNews();
+				this.news = response.data;
+				this.isLoading = false;
+			} catch (err) {
+				this.isLoading = false;
+				this.error = err;
+			}
+		},
+		async getNews() {
+			return axios.get('/api/news');
 		}
 	}
 };
 </script>
 <style lang="scss" scoped>
-.container {
+.title-wrapper {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	padding: 0 2rem;
-	margin: 0 auto;
-	font-size: 14px;
-
-	@media only screen and (max-width: 479px) {
-		padding: 0 0.2rem;
-	}
-	@media (min-width: 481px) and (max-width: 767px) {
-		padding: 0 0.8rem;
-	}
-	@media (min-width: 768px) and (max-width: 1280px) {
-		padding: 0 1rem;
+	align-items: center;
+	a {
+		margin-left: 0.5rem;
 	}
 }
 </style>
