@@ -2,15 +2,15 @@
 	<v-card class="mx-auto card-wrapper">
 		<images-control v-bind:is-open="imagesControl" @close="onClose" @onSelect="onSelectImage" />
 		<v-card-title>Изображение</v-card-title>
-		<v-img class="white--text align-end" height="400px" v-if="selectedImage" v-bind:src="selectedImage" />
+		<v-img class="white--text align-end" height="400px" v-if="value" v-bind:src="value" />
 		<v-card-text>
-			<p v-if="!selectedImage">
+			<p v-if="!value">
 				Изображение не выбранно
 				<v-btn color="primary" @click="onSelect">
 					Добавить
 				</v-btn>
 			</p>
-			<v-btn color="error" v-if="selectedImage">
+			<v-btn color="error" v-if="value">
 				Удалить
 			</v-btn>
 		</v-card-text>
@@ -24,8 +24,10 @@ export default {
 	components: {
 		'images-control': ImagesControl
 	},
+	props: {
+		value: String
+	},
 	data: () => ({
-		selectedImage: null,
 		imagesControl: false
 	}),
 	methods: {
@@ -36,8 +38,8 @@ export default {
 			this.imagesControl = false;
 		},
 		onSelectImage(image) {
+			this.$emit('onChange', image);
 			this.imagesControl = false;
-			this.selectedImage = image;
 		}
 	}
 };

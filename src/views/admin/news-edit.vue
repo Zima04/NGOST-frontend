@@ -24,7 +24,7 @@
 				/>
 			</div>
 			<div class="form-group">
-				<v-file-input label="Изображение" accept="image/*" v-model="formData.image_holder" />
+				<v-file-input label="Превью изображение" accept="image/*" v-model="formData.image_holder" />
 			</div>
 			<h2 class="headline">Содержмое новости</h2>
 			<div class="form-group">
@@ -35,7 +35,7 @@
 					<tinymce-editor v-model="component.value" />
 				</template>
 				<template v-else-if="component.type === 'image'">
-					<images-section value="component.value" />
+					<images-section v-bind:value="component.value" @onChange="onChangeSection($event, index)" />
 				</template>
 			</div>
 			<div class="controls">
@@ -124,6 +124,9 @@ export default {
 				case 'text':
 					return this.newsBody.push(text);
 			}
+		},
+		onChangeSection(value, index) {
+			this.newsBody[index].value = value;
 		}
 	},
 	created: () => {
