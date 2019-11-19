@@ -194,13 +194,10 @@ $light_gray: lighten($black, 60%);
 		width: 100%;
 		padding: 0.2rem;
 	}
-	@media (min-width: 481px) and (max-width: 767px) {
+	@media (min-width: 481px) and (max-width: 1280px) {
 		width: 50%;
 		padding: 0.5rem;
 	}
-	@media (min-width: 768px) and (max-width: 1280px) {
-		width: 33%;
-		padding: 0.3rem;
-	}
+
 }
 </style>

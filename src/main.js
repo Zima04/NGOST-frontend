@@ -1,15 +1,14 @@
 import Vue from 'vue';
 import Vuelidate from 'vuelidate';
-import App from './App.vue';
 import router from './router';
 import vuetify from './plugins/vuetify';
-import 'tinymce/tinymce'
 
-import 'tinymce/themes/silver/theme'
-
-import 'tinymce/skins/ui/oxide/skin.min.css'
-import 'tinymce/skins/ui/oxide/content.min.css'
-import 'tinymce/skins/content/default/content.min.css'
+import 'tinymce/tinymce';
+import 'tinymce/themes/silver/theme';
+import 'tinymce/skins/ui/oxide/skin.min.css';
+import 'tinymce/skins/ui/oxide/content.min.css';
+import 'tinymce/skins/content/default/content.min.css';
+import App from './App.vue';
 
 Vue.use(Vuelidate);
 

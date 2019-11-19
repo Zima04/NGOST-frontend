@@ -38,7 +38,7 @@
 import Editor from '@tinymce/tinymce-vue';
 import { validationMixin } from 'vuelidate';
 import { required, email } from 'vuelidate/lib/validators';
-import { async } from 'q';
+import axios from 'axios';
 
 export default {
 	name: 'NewsEdit',
@@ -61,7 +61,7 @@ export default {
 				let imageId = null;
 				if (this.image_holder) {
 					const imageResponse = await this.saveImage();
-					imageId = imageResponse.id;
+					imageId = imageResponse.data.id;
 				}
 				const response = await this.saveNews(imageId);
 			} catch (error) {
@@ -69,25 +69,20 @@ export default {
 			}
 		},
 		async saveNews(imageId) {
-			return fetch('/api/news', {
-				method: 'POST',
-				body: JSON.stringify({
-					title: this.title,
-					description: this.description,
-					image: imageId,
-					short_desc: this.short_desc
-				})
+			return axios.post('/api/news', {
+				title: this.title,
+				description: this.description,
+				image: imageId,
+				short_desc: this.short_desc
 			});
 		},
 		async saveImage() {
 			const formData = new FormData();
 			formData.append('file', this.image_holder);
-			return fetch('/api/media', {
-				method: 'POST',
+			return axios.post('/api/media', formData, {
 				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded'
-				},
-				body: formData
+					'Content-Type': 'multipart/form-data'
+				}
 			});
 		}
 	},
