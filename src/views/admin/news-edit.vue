@@ -1,6 +1,5 @@
 <template>
 	<div class="container">
-		<images-control v-bind:is-open="imagesControl" @close="onClose" @onSelect="onSelectImage" />
 		<h1 class="headline">
 			Создание новости
 		</h1>
@@ -24,13 +23,10 @@
 				/>
 			</div>
 			<div class="form-group">
-				<v-file-input label="Превью изображение" accept="image/*" v-model="formData.image_holder" />
+				<v-file-input label="Превью изображение" accept="image/*" v-model="image_holder" />
 			</div>
 			<h2 class="headline">Содержмое новости</h2>
-			<div class="form-group">
-				<tinymce-editor v-model="formData.description" />
-			</div>
-			<div class="form-group" v-for="(component, index) in newsBody" v-bind:key="index">
+			<div class="form-group" v-for="(component, index) in formData.description" v-bind:key="index">
 				<template v-if="component.type === 'text'">
 					<tinymce-editor v-model="component.value" />
 				</template>
@@ -70,6 +66,11 @@ import ImagesSection from './images-section';
 
 export default {
 	name: 'NewsEdit',
+	components: {
+		'tinymce-editor': Editor,
+		'images-control': ImagesControl,
+		'images-section': ImagesSection
+	},
 	mixins: [validationMixin],
 	validations: {
 		title: { required },
@@ -79,19 +80,22 @@ export default {
 	data: () => ({
 		formData: {
 			title: '',
-			description: '',
+			description: [{ type: 'text', value: null }],
 			short_desc: '',
-			image_holder: null
+			image: null
 		},
-		newsBody: [],
+		image_holder: null,
 		required: [v => !!v || 'Field is required'],
 		imagesControl: false
 	}),
+	created: () => {
+		console.log('eee');
+	},
 	methods: {
 		async onSubmit() {
 			try {
 				let imageId = null;
-				if (this.formData.image_holder) {
+				if (this.image_holder) {
 					const imageResponse = await this.saveImage();
 					imageId = imageResponse.data.id;
 				}
@@ -102,10 +106,17 @@ export default {
 		},
 		async saveNews(imageId) {
 			return axios.post('/api/news', {
-				title: this.title,
-				description: this.description,
-				image: imageId,
-				short_desc: this.short_desc
+				...this.formData,
+				image: imageId
+			});
+		},
+		async saveImage() {
+			const formData = new FormData();
+			formData.append('file', this.image_holder);
+			return axios.post('/api/media', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
 			});
 		},
 		onClose() {
@@ -120,22 +131,14 @@ export default {
 
 			switch (type) {
 				case 'image':
-					return this.newsBody.push(image);
+					return this.formData.description.push(image);
 				case 'text':
-					return this.newsBody.push(text);
+					return this.formData.description.push(text);
 			}
 		},
 		onChangeSection(value, index) {
-			this.newsBody[index].value = value;
+			this.formData.description[index].value = value;
 		}
-	},
-	created: () => {
-		console.log('eee');
-	},
-	components: {
-		'tinymce-editor': Editor,
-		'images-control': ImagesControl,
-		'images-section': ImagesSection
 	}
 };
 </script>
