@@ -9,12 +9,19 @@
 		<v-data-table
 			:headers="headers"
 			:items="news"
-			:items-per-page="5"
 			class="elevation-1"
 			hide-default-footer
 			:loading="isLoading"
 			loading-text="Loading... Please wait"
 		>
+			<template v-slot:item.action="{ item }">
+				<v-icon small class="mr-2" @click="editNews(item)">
+					mdi-pencil
+				</v-icon>
+				<v-icon small @click="deleteNews(item)">
+					mdi-delete
+				</v-icon>
+			</template>
 		</v-data-table>
 	</div>
 </template>
@@ -40,14 +47,15 @@ export default {
 					text: 'Краткое описание',
 					align: 'center',
 					sortable: false,
-					value: 'short_descr'
+					value: 'short_desc'
 				},
 				{
 					text: 'Дата создания',
 					align: 'center',
 					sortable: false,
-					value: 'title'
-				}
+					value: 'created_at.date'
+				},
+				{ text: 'Actions', value: 'action', sortable: false, align: 'center' }
 			]
 		};
 	},
@@ -58,10 +66,9 @@ export default {
 	methods: {
 		async fetchData() {
 			this.error = false;
-			this.isLoading = true;
 			try {
 				const response = await this.getNews();
-				this.news = response.data;
+				this.news = response.data.response;
 				this.isLoading = false;
 			} catch (err) {
 				this.isLoading = false;
@@ -70,6 +77,18 @@ export default {
 		},
 		async getNews() {
 			return axios.get('/api/news');
+		},
+		async editNews() {
+
+		},
+		async deleteNews(news) {
+			this.isLoading = true;
+			try {
+				await axios.delete(`/api/news/${news.id}`)
+				this.fetchData();
+			} catch(err) {
+				console.log(err);
+			}
 		}
 	}
 };
