@@ -25,39 +25,39 @@
 
 <script>
 export default {
-  name: 'Application',
-  data() {
-    return {
-      items: [
-        {
-          name: 'Загрузка документа',
-          linkTo: '/app/import-doc'
-        },
-        {
-          name: 'Формирование требований',
-          linkTo: '/app/create-demand'
-        },
-        {
-          name: 'Список требований',
-          linkTo: '/'
-        },
-        {
-          name: 'Список документов',
-          linkTo: '/'
-        },
-        {
-          name: 'Личная информация',
-          linkTo: '/app/my-profile'
-        },
-        {
-          name: 'Состояние счета',
-          linkTo: '/app/account-state'
-        }
-      ]
-    };
-  },
-  methods: {
-  }
+	name: 'Application',
+	data() {
+		return {
+			items: [
+				{
+					name: 'Загрузка документа',
+					linkTo: '/app/import-doc'
+				},
+				{
+					name: 'Формирование требований',
+					linkTo: '/app/create-demand'
+				},
+				{
+					name: 'Список требований',
+					linkTo: '/'
+				},
+				{
+					name: 'Список документов',
+					linkTo: '/'
+				},
+				{
+					name: 'Личная информация',
+					linkTo: '/app/my-profile'
+				},
+				{
+					name: 'Состояние счета',
+					linkTo: '/app/account-state'
+				}
+			]
+		};
+	},
+	methods: {
+	}
 };
 </script>
 <style lang="scss" scoped>

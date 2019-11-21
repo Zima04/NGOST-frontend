@@ -1,41 +1,57 @@
 <template>
-	<v-dialog v-model="isOpen" persistent class="dialog">
-		<v-card class="card-content">
-			<v-card-title class="headline">Select image</v-card-title>
-			<div class="images-list">
-				<div
-					class="image"
-					v-for="(image, index) in images"
-					v-bind:key="index"
-					@click="selectedImage = image"
-					v-bind:class="{ active: selectedImage.id === image.id }"
-				>
-					<img alt="image" v-bind:src="image.path" />
-				</div>
-			</div>
-			<v-card-actions>
-				<v-spacer></v-spacer>
-				<v-btn color="green darken-1" text @click="onClose">Disagree</v-btn>
-				<v-btn color="green darken-1" text @click="onSubmit">Agree</v-btn>
-			</v-card-actions>
-		</v-card>
-	</v-dialog>
+  <v-dialog
+    v-model="isOpen"
+    persistent
+    class="dialog">
+    <v-card class="card-content">
+      <v-card-title class="headline">
+        Select image
+      </v-card-title>
+      <div class="images-list">
+        <div
+          v-for="(image, index) in images"
+          :key="index"
+          class="image"
+          :class="{ active: selectedImage.id === image.id }"
+          @click="selectedImage = image"
+        >
+          <img
+            alt="image"
+            :src="image.path" >
+        </div>
+      </div>
+      <v-card-actions>
+        <v-spacer/>
+        <v-btn
+          color="green darken-1"
+          text
+          @click="onClose">
+          Disagree
+        </v-btn>
+        <v-btn
+          color="green darken-1"
+          text
+          @click="onSubmit">
+          Agree
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
 import axios from 'axios';
-import { async } from 'q';
 export default {
 	name: 'ImagesControl',
+	props: {
+		isOpen: Boolean
+	},
 	data: () => ({
 		selectedImage: {},
 		isLoading: true,
 		errors: false,
 		images: []
 	}),
-	props: {
-		isOpen: Boolean
-	},
 	async created() {
 		try {
 			const response = await this.getImages();
@@ -52,7 +68,6 @@ export default {
 			this.$emit('onSelect', this.selectedImage);
 		},
 		async getImages() {
-			console.log('sss');
 			return axios.get('/api/media');
 		}
 	}

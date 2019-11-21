@@ -73,76 +73,76 @@
 <script>
 import { validationMixin } from 'vuelidate';
 import {
-  required, minLength, email, sameAs
+	required, minLength, email, sameAs
 } from 'vuelidate/lib/validators';
 
 export default {
-  name: 'SignUp',
-  mixins: [validationMixin],
-  validations: {
-    name: { required },
-    email: { required, email },
-    password: { required, minLength: minLength(10) },
-    passwordConfirm: { required, sameAsPassword: sameAs('password') },
-    phone: { required }
-  },
-  data: () => ({
-    name: '',
-    email: '',
-    password: '',
-    passwordConfirm: '',
-    phone: '',
-    showPassword: false,
-    showPasswordConfirm: false,
-  }),
-  computed: {
-    nameErrors () {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
-      !this.$v.name.required && errors.push('Введите имя.');
-      return errors;
-    },
-    emailErrors () {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push('Введена неккоректная электронная почта.');
-      !this.$v.email.required && errors.push('Введите элекстронную почту.');
-      return errors;
-    },
-    passwordErrors() {
-      const errors = [];
-      if (!this.$v.password.$dirty) return errors;
-      !this.$v.password.minLength && errors.push('Пароль должен быть больше 10 символов.');
-      !this.$v.password.required && errors.push('Введите пароль.');
-      return errors;
-    },
-    passwordConfirmErrors() {
-      const errors = [];
-      if (!this.$v.passwordConfirm.$dirty) return errors;
-      !this.$v.passwordConfirm.sameAsPassword && errors.push('Пароли не совпадают.');
-      !this.$v.passwordConfirm.required && errors.push('Потвердите пароль.');
-      return errors;
-    },
-    phoneErrors() {
-      const errors = [];
-      if (!this.$v.phone.$dirty) return errors;
-      !this.$v.phone.required && errors.push('Введите мобильный телефон.');
-      return errors;
-    }
-  },
-  methods: {
-    submit () {
-      this.$v.$touch();
-    },
-    clear () {
-      this.$v.$reset();
-      this.name = '';
-      this.email = '';
-      this.password = '';
-      this.passwordConfirm = '';
-      this.phone = '';
-    },
-  },
+	name: 'SignUp',
+	mixins: [validationMixin],
+	validations: {
+		name: { required },
+		email: { required, email },
+		password: { required, minLength: minLength(10) },
+		passwordConfirm: { required, sameAsPassword: sameAs('password') },
+		phone: { required }
+	},
+	data: () => ({
+		name: '',
+		email: '',
+		password: '',
+		passwordConfirm: '',
+		phone: '',
+		showPassword: false,
+		showPasswordConfirm: false,
+	}),
+	computed: {
+		nameErrors () {
+			const errors = [];
+			if (!this.$v.name.$dirty) return errors;
+			!this.$v.name.required && errors.push('Введите имя.');
+			return errors;
+		},
+		emailErrors () {
+			const errors = [];
+			if (!this.$v.email.$dirty) return errors;
+			!this.$v.email.email && errors.push('Введена неккоректная электронная почта.');
+			!this.$v.email.required && errors.push('Введите элекстронную почту.');
+			return errors;
+		},
+		passwordErrors() {
+			const errors = [];
+			if (!this.$v.password.$dirty) return errors;
+			!this.$v.password.minLength && errors.push('Пароль должен быть больше 10 символов.');
+			!this.$v.password.required && errors.push('Введите пароль.');
+			return errors;
+		},
+		passwordConfirmErrors() {
+			const errors = [];
+			if (!this.$v.passwordConfirm.$dirty) return errors;
+			!this.$v.passwordConfirm.sameAsPassword && errors.push('Пароли не совпадают.');
+			!this.$v.passwordConfirm.required && errors.push('Потвердите пароль.');
+			return errors;
+		},
+		phoneErrors() {
+			const errors = [];
+			if (!this.$v.phone.$dirty) return errors;
+			!this.$v.phone.required && errors.push('Введите мобильный телефон.');
+			return errors;
+		}
+	},
+	methods: {
+		submit () {
+			this.$v.$touch();
+		},
+		clear () {
+			this.$v.$reset();
+			this.name = '';
+			this.email = '';
+			this.password = '';
+			this.passwordConfirm = '';
+			this.phone = '';
+		},
+	},
 };
 </script>
 <style scoped>

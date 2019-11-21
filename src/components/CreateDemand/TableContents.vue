@@ -302,28 +302,28 @@
 
 <script>
 export default {
-  name: 'TableContets',
-  data: () => ({
-    field_contents_main_position: null,
-    field_contents_font_symbol: null,
-    field_contents_title: null,
-    field_contents_first: null,
-    field_contents_firstan: null,
-    field_contents_second: null,
-    field_contents_secondan: null,
-    field_contents_first_02: null,
-    field_contents_firstan_02: null,
-    field_contents_second_02: null,
-    field_contents_secondan_02: null,
-    field_contents_first_03: null,
-    field_contents_firstan_03: null,
-    field_contents_second_03: null,
-    field_contents_secondan_03: null,
-    field_contents_font_font: null,
-    field_contents_font_size: null,
-    field_contents_font_color: null,
-    field_contents_font_background: null,
-  })
+	name: 'TableContets',
+	data: () => ({
+		field_contents_main_position: null,
+		field_contents_font_symbol: null,
+		field_contents_title: null,
+		field_contents_first: null,
+		field_contents_firstan: null,
+		field_contents_second: null,
+		field_contents_secondan: null,
+		field_contents_first_02: null,
+		field_contents_firstan_02: null,
+		field_contents_second_02: null,
+		field_contents_secondan_02: null,
+		field_contents_first_03: null,
+		field_contents_firstan_03: null,
+		field_contents_second_03: null,
+		field_contents_secondan_03: null,
+		field_contents_font_font: null,
+		field_contents_font_size: null,
+		field_contents_font_color: null,
+		field_contents_font_background: null,
+	})
 };
 </script>
 

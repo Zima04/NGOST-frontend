@@ -79,21 +79,21 @@
 
 <script>
 export default {
-  name: 'AccountInfo',
-  data: () => ({
-    name: '',
-    current_password: '',
-    email: '',
-    password: '',
-    confirm_password: '',
-    firstname: '',
-    phone: '',
-    county: '',
-    city: '',
-    lastname: '',
-    info_change: false,
-    distribution: false,
-  })
+	name: 'AccountInfo',
+	data: () => ({
+		name: '',
+		current_password: '',
+		email: '',
+		password: '',
+		confirm_password: '',
+		firstname: '',
+		phone: '',
+		county: '',
+		city: '',
+		lastname: '',
+		info_change: false,
+		distribution: false,
+	})
 };
 </script>
 

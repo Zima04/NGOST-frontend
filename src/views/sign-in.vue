@@ -50,41 +50,41 @@ import { validationMixin } from 'vuelidate';
 import { required, email } from 'vuelidate/lib/validators';
 
 export default {
-  name: 'SignIn',
-  mixins: [validationMixin],
-  validations: {
-    email: { required, email },
-    password: { required },
-  },
-  data: () => ({
-    email: '',
-    password: ''
-  }),
-  computed: {
-    passwordErrors() {
-      const errors = [];
-      if (!this.$v.password.$dirty) return errors;
-      !this.$v.password.required && errors.push('Введите пароль.');
-      return errors;
-    },
-    emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push('Введена неккоректная электронная почта.');
-      !this.$v.email.required && errors.push('Введите элекстронную почту.');
-      return errors;
-    },
-  },
-  methods: {
-    submit() {
-      this.$v.$touch();
-    },
-    clear() {
-      this.$v.$reset();
-      this.password = '';
-      this.email = '';
-    },
-  },
+	name: 'SignIn',
+	mixins: [validationMixin],
+	validations: {
+		email: { required, email },
+		password: { required },
+	},
+	data: () => ({
+		email: '',
+		password: ''
+	}),
+	computed: {
+		passwordErrors() {
+			const errors = [];
+			if (!this.$v.password.$dirty) return errors;
+			!this.$v.password.required && errors.push('Введите пароль.');
+			return errors;
+		},
+		emailErrors() {
+			const errors = [];
+			if (!this.$v.email.$dirty) return errors;
+			!this.$v.email.email && errors.push('Введена неккоректная электронная почта.');
+			!this.$v.email.required && errors.push('Введите элекстронную почту.');
+			return errors;
+		},
+	},
+	methods: {
+		submit() {
+			this.$v.$touch();
+		},
+		clear() {
+			this.$v.$reset();
+			this.password = '';
+			this.email = '';
+		},
+	},
 };
 </script>
 <style lang="scss" scoped>

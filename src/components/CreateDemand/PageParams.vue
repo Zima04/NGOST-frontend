@@ -76,20 +76,20 @@
 
 <script>
 export default {
-  name: 'PageParams',
-  data() {
-    return {
-      templatesSetting: ['1', '2'],
-      sizePage: ['A1', 'A2', 'A3', 'A4'],
-      orientations: ['Книжная', 'альбомная'],
-      pageVariant: [
-        'Обычный',
-        'Зеракальные поля',
-        '2 страницы на листе',
-        'Брошюра',
-      ]
-    };
-  }
+	name: 'PageParams',
+	data() {
+		return {
+			templatesSetting: ['1', '2'],
+			sizePage: ['A1', 'A2', 'A3', 'A4'],
+			orientations: ['Книжная', 'альбомная'],
+			pageVariant: [
+				'Обычный',
+				'Зеракальные поля',
+				'2 страницы на листе',
+				'Брошюра',
+			]
+		};
+	}
 };
 </script>
 

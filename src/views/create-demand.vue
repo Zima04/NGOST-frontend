@@ -88,27 +88,27 @@ import TableContents from '@/components/CreateDemand/TableContents.vue';
 import Images from '@/components/CreateDemand/Images.vue';
 
 export default {
-  data() {
-    return {
-      TypesDemand,
-      HeadersFooters,
-      currentTab: 'typesDemand',
-      components: {
-        typesDemand: TypesDemand,
-        headersFooters: HeadersFooters,
-        pageParams: PageParams,
-        formuls: Formuls,
-        headline: Headline,
-        tableContets: TableContents,
-        images: Images
-      }
-    };
-  },
-  methods: {
-    handleTab(name) {
-      this.currentTab = name;
-    }
-  }
+	data() {
+		return {
+			TypesDemand,
+			HeadersFooters,
+			currentTab: 'typesDemand',
+			components: {
+				typesDemand: TypesDemand,
+				headersFooters: HeadersFooters,
+				pageParams: PageParams,
+				formuls: Formuls,
+				headline: Headline,
+				tableContets: TableContents,
+				images: Images
+			}
+		};
+	},
+	methods: {
+		handleTab(name) {
+			this.currentTab = name;
+		}
+	}
 };
 </script>
 

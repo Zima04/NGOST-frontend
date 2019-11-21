@@ -119,31 +119,31 @@
 
 <script>
 export default {
-  name: 'CompanyInfo',
-  data: () => ({
-    trade_name: '',
-    brief_name: '',
-    legal_state: '',
-    legal_city: '',
-    legal_post: '',
-    legal_address: '',
-    post_state: '',
-    post_city: '',
-    post_index: '',
-    post_address: '',
-    direction_job: '',
-    direction_proxy: '',
-    direction_name: '',
-    contact_fax: '',
-    contact_phone: '',
-    contact_email: '',
-    bank_unn: '',
-    bank_okpo: '',
-    bank_account: '',
-    bank_name: '',
-    bank_code: '',
-    bank_address: '',
-  })
+	name: 'CompanyInfo',
+	data: () => ({
+		trade_name: '',
+		brief_name: '',
+		legal_state: '',
+		legal_city: '',
+		legal_post: '',
+		legal_address: '',
+		post_state: '',
+		post_city: '',
+		post_index: '',
+		post_address: '',
+		direction_job: '',
+		direction_proxy: '',
+		direction_name: '',
+		contact_fax: '',
+		contact_phone: '',
+		contact_email: '',
+		bank_unn: '',
+		bank_okpo: '',
+		bank_account: '',
+		bank_name: '',
+		bank_code: '',
+		bank_address: '',
+	})
 };
 </script>
 

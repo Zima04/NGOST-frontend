@@ -16,11 +16,11 @@ import VueFooter from './components/VueFooter.vue';
 import './assets/normalize.css';
 
 export default {
-  name: 'App',
-  components: {
-    VueHeader,
-    VueFooter,
-  }
+	name: 'App',
+	components: {
+		VueHeader,
+		VueFooter,
+	}
 };
 </script>
 

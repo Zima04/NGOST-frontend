@@ -91,35 +91,35 @@
 
 <script>
 export default {
-  name: 'ImportDoc',
-  data: () => ({
-    requirements: [
-      {
-        name: 'STP BSUIR',
-        value: 15
-      },
-      {
-        name: 'MAGISTR',
-        value: 16
-      },
-      {
-        name: 'STP BSEU',
-        value: 20
-      },
-      {
-        name: 'IZDAT',
-        value: 24
-      },
-      {
-        name: 'English STP',
-        value: 25
-      },
-      {
-        name: 'IZDAT BSUIR',
-        value: 26
-      },
-    ]
-  })
+	name: 'ImportDoc',
+	data: () => ({
+		requirements: [
+			{
+				name: 'STP BSUIR',
+				value: 15
+			},
+			{
+				name: 'MAGISTR',
+				value: 16
+			},
+			{
+				name: 'STP BSEU',
+				value: 20
+			},
+			{
+				name: 'IZDAT',
+				value: 24
+			},
+			{
+				name: 'English STP',
+				value: 25
+			},
+			{
+				name: 'IZDAT BSUIR',
+				value: 26
+			},
+		]
+	})
 };
 </script>
 

@@ -330,27 +330,27 @@
 
 <script>
 export default {
-  name: 'Headline',
-  data: () => ({
-    field_title_main_level: null,
-    field_title_main_spelling: null,
-    field_title_main_pattern: null,
-    field_title_main_own: null,
-    field_title_main_interval: null,
-    field_title_main_after: null,
-    field_title_main_first: null,
-    field_title_main_firstan: null,
-    field_title_main_second: null,
-    field_title_main_secondan: null,
-    field_title_font_font: null,
-    field_title_font_size: null,
-    field_title_font_color: null,
-    field_title_font_background: null,
-    field_title_number_type2: null,
-    field_title_number_view2: null,
-    field_title_number_ownview2: null,
-    weight: null,
-  })
+	name: 'Headline',
+	data: () => ({
+		field_title_main_level: null,
+		field_title_main_spelling: null,
+		field_title_main_pattern: null,
+		field_title_main_own: null,
+		field_title_main_interval: null,
+		field_title_main_after: null,
+		field_title_main_first: null,
+		field_title_main_firstan: null,
+		field_title_main_second: null,
+		field_title_main_secondan: null,
+		field_title_font_font: null,
+		field_title_font_size: null,
+		field_title_font_color: null,
+		field_title_font_background: null,
+		field_title_number_type2: null,
+		field_title_number_view2: null,
+		field_title_number_ownview2: null,
+		weight: null,
+	})
 };
 </script>
 

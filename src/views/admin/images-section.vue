@@ -1,24 +1,35 @@
 <template>
-	<v-card class="mx-auto card-wrapper">
-		<template v-if="imagesControl">
-			<images-control v-bind:is-open="imagesControl" @close="onClose" @onSelect="onSelectImage" />
-		</template>
-		<v-card-title>Изображение</v-card-title>
-		<v-img class="white--text align-end" minheight="300px" v-if="value">
-			<img v-bind:src="value.path" />
-		</v-img>
-		<v-card-text>
-			<p v-if="!value">
-				Изображение не выбранно
-				<v-btn color="primary" @click="onSelect">
-					Добавить
-				</v-btn>
-			</p>
-			<v-btn color="error" v-if="value" @click="onDelete">
-				Удалить
-			</v-btn>
-		</v-card-text>
-	</v-card>
+  <v-card class="mx-auto card-wrapper">
+    <template v-if="imagesControl">
+      <images-control
+        :is-open="imagesControl"
+        @close="onClose"
+        @onSelect="onSelectImage" />
+    </template>
+    <v-card-title>Изображение</v-card-title>
+    <v-img
+      v-if="value"
+      class="white--text align-end"
+      minheight="300px">
+      <img :src="value.path" >
+    </v-img>
+    <v-card-text>
+      <p v-if="!value">
+        Изображение не выбранно
+        <v-btn
+          color="primary"
+          @click="onSelect">
+          Добавить
+        </v-btn>
+      </p>
+      <v-btn
+        v-if="value"
+        color="error"
+        @click="onDelete">
+        Удалить
+      </v-btn>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>

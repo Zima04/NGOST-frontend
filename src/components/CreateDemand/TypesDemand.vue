@@ -50,11 +50,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      radioGroup: ''
-    };
-  }
+	data() {
+		return {
+			radioGroup: ''
+		};
+	}
 };
 </script>
 

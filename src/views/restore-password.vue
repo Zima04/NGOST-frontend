@@ -27,32 +27,32 @@ import { validationMixin } from 'vuelidate';
 import { required, email } from 'vuelidate/lib/validators';
 
 export default {
-  name: 'RestorePassword',
-  mixins: [validationMixin],
-  validations: {
-    email: { required, email }
-  },
-  data: () => ({
-    email: ''
-  }),
-  computed: {
-    emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push('Введена неккоректная электронная почта.');
-      !this.$v.email.required && errors.push('Введите элекстронную почту.');
-      return errors;
-    },
-  },
-  methods: {
-    submit() {
-      this.$v.$touch();
-    },
-    clear() {
-      this.$v.$reset();
-      this.email = '';
-    },
-  },
+	name: 'RestorePassword',
+	mixins: [validationMixin],
+	validations: {
+		email: { required, email }
+	},
+	data: () => ({
+		email: ''
+	}),
+	computed: {
+		emailErrors() {
+			const errors = [];
+			if (!this.$v.email.$dirty) return errors;
+			!this.$v.email.email && errors.push('Введена неккоректная электронная почта.');
+			!this.$v.email.required && errors.push('Введите элекстронную почту.');
+			return errors;
+		},
+	},
+	methods: {
+		submit() {
+			this.$v.$touch();
+		},
+		clear() {
+			this.$v.$reset();
+			this.email = '';
+		},
+	},
 };
 </script>
 <style lang="scss" scoped>

@@ -116,17 +116,17 @@
 
 <script>
 export default {
-  data() {
-    return {
-      fonts: [
-        'Arial',
-        'Calibri',
-      ],
-      sizes: [1, 5, 10, 15],
-      align: null,
-      fontType: null
-    };
-  }
+	data() {
+		return {
+			fonts: [
+				'Arial',
+				'Calibri',
+			],
+			sizes: [1, 5, 10, 15],
+			align: null,
+			fontType: null
+		};
+	}
 };
 </script>
 

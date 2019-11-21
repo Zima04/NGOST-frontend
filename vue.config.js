@@ -1,5 +1,5 @@
 module.exports = {
-  devServer: {
-    proxy: 'https://api.ngost.by'
-  }
+	devServer: {
+		proxy: 'https://api.ngost.by'
+	}
 };

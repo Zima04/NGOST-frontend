@@ -28,42 +28,42 @@
 
 <script>
 export default {
-  name: 'AccountState',
-  data: () => ({
-    headers: [
-      {
-        text: 'Дата',
-        align: 'left',
-        sortable: false,
-        value: 'date',
-      },
-      {
-        text: 'Время',
-        value: 'time'
-      },
-      {
-        text: 'Действие',
-        value: 'action'
-      },
-      {
-        text: 'Документ',
-        value: 'document'
-      },
-      {
-        text: 'Сумма, бел. руб',
-        value: 'price'
-      },
-    ],
-    items: [
-      {
-        date: '04.09.2019',
-        time: '21.09',
-        action: 'Пополнение счета',
-        document: '-',
-        price: '5',
-      }
-    ]
-  })
+	name: 'AccountState',
+	data: () => ({
+		headers: [
+			{
+				text: 'Дата',
+				align: 'left',
+				sortable: false,
+				value: 'date',
+			},
+			{
+				text: 'Время',
+				value: 'time'
+			},
+			{
+				text: 'Действие',
+				value: 'action'
+			},
+			{
+				text: 'Документ',
+				value: 'document'
+			},
+			{
+				text: 'Сумма, бел. руб',
+				value: 'price'
+			},
+		],
+		items: [
+			{
+				date: '04.09.2019',
+				time: '21.09',
+				action: 'Пополнение счета',
+				document: '-',
+				price: '5',
+			}
+		]
+	})
 };
 </script>
 

@@ -1,11 +1,11 @@
 <template>
-	<div class="container">
-		<NewsItem />
-		<NewsItem />
-		<NewsItem />
-		<NewsItem />
-		<NewsItem />
-	</div>
+  <div class="container">
+    <NewsItem />
+    <NewsItem />
+    <NewsItem />
+    <NewsItem />
+    <NewsItem />
+  </div>
 </template>
 
 <script>

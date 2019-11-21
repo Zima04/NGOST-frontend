@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: 'VueFooter'
+	name: 'VueFooter'
 };
 </script>
 

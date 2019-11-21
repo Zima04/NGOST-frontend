@@ -30,18 +30,18 @@
 
 <script>
 export default {
-  name: 'About',
-  data() {
-    return {
-      email: null,
-      password: null
-    };
-  },
-  methods: {
-    onSubmit() {
+	name: 'About',
+	data() {
+		return {
+			email: null,
+			password: null
+		};
+	},
+	methods: {
+		onSubmit() {
 
-    }
-  }
+		}
+	}
 };
 </script>
 <style lang="scss" scoped>

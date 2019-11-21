@@ -1,59 +1,73 @@
 <template>
-	<div class="container">
-		<h1 class="headline">
-			Создание новости
-		</h1>
-		<form v-on:submit.prevent="onSubmit">
-			<div class="form-group">
-				<v-text-field
-					label="Заголовок"
-					v-model="formData.title"
-					@input="$v.title.$touch()"
-					@blur="$v.title.$touch()"
-					:rules="required"
-				/>
-			</div>
-			<div class="form-group">
-				<v-text-field
-					label="Краткое описание"
-					v-model="formData.short_desc"
-					@input="$v.short_desc.$touch()"
-					@blur="$v.short_desc.$touch()"
-					:rules="required"
-				/>
-			</div>
-			<div class="form-group">
-				<v-file-input label="Превью изображение" accept="image/*" v-model="image_holder" />
-			</div>
-			<h2 class="headline">Содержмое новости</h2>
-			<div class="form-group" v-for="(component, index) in formData.description" v-bind:key="index">
-				<template v-if="component.type === 'text'">
-					<tinymce-editor v-model="component.value" />
-				</template>
-				<template v-else-if="component.type === 'image'">
-					<images-section v-bind:value="component.value" @onChange="onChangeSection($event, index)" />
-				</template>
-			</div>
-			<div class="controls">
-				<v-menu offset-y>
-					<template v-slot:activator="{ on }">
-						<v-btn v-on="on">
-							Добавить секцию
-						</v-btn>
-					</template>
-					<v-list>
-						<v-list-item @click="addSection('image')">
-							<v-list-item-title>Изображение</v-list-item-title>
-						</v-list-item>
-						<v-list-item @click="addSection('text')">
-							<v-list-item-title>Тест</v-list-item-title>
-						</v-list-item>
-					</v-list>
-				</v-menu>
-				<v-btn color="primary" type="submit">Сохранить</v-btn>
-			</div>
-		</form>
-	</div>
+  <div class="container">
+    <h1 class="headline">
+      Создание новости
+    </h1>
+    <form @submit.prevent="onSubmit">
+      <div class="form-group">
+        <v-text-field
+          v-model="formData.title"
+          label="Заголовок"
+          :rules="required"
+          @input="$v.title.$touch()"
+          @blur="$v.title.$touch()"
+        />
+      </div>
+      <div class="form-group">
+        <v-text-field
+          v-model="formData.short_desc"
+          label="Краткое описание"
+          :rules="required"
+          @input="$v.short_desc.$touch()"
+          @blur="$v.short_desc.$touch()"
+        />
+      </div>
+      <div class="form-group">
+        <v-file-input
+          v-model="image_holder"
+          label="Превью изображение"
+          accept="image/*" />
+      </div>
+      <h2 class="headline">
+        Содержмое новости
+      </h2>
+      <div
+        v-for="(component, index) in formData.description"
+        :key="index"
+        class="form-group">
+        <template v-if="component.type === 'text'">
+          <tinymce-editor v-model="component.value" />
+        </template>
+        <template v-else-if="component.type === 'image'">
+          <images-section
+            :value="component.value"
+            @onChange="onChangeSection($event, index)" />
+        </template>
+      </div>
+      <div class="controls">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn v-on="on">
+              Добавить секцию
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item @click="addSection('image')">
+              <v-list-item-title>Изображение</v-list-item-title>
+            </v-list-item>
+            <v-list-item @click="addSection('text')">
+              <v-list-item-title>Тест</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <v-btn
+          color="primary"
+          type="submit">
+          Сохранить
+        </v-btn>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -88,10 +102,15 @@ export default {
 		required: [v => !!v || 'Field is required'],
 		imagesControl: false
 	}),
-	created: () => {
-		console.log('eee');
+	created() {
+		if (this.$route.params.id) {
+			this.fetchData();
+		}
 	},
 	methods: {
+		async fetchData() {
+			console.log(this.$route.params.id);
+		},
 		async onSubmit() {
 			try {
 				let imageId = null;

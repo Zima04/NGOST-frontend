@@ -39,27 +39,27 @@ import AccountInfo from '../components/AccountInfo.vue';
 import CompanyInfo from '../components/CompanyInfo.vue';
 
 export default {
-  name: 'Profile',
-  components: {
-    AccountInfo,
-    CompanyInfo
-  },
-  data () {
-    return {
-      tab: null,
-      icons: false,
-      centered: false,
-      grow: false,
-      vertical: false,
-      prevIcon: false,
-      nextIcon: false,
-      right: false,
-      tabs: [
-        { name: 'Account', component: AccountInfo },
-        { name: 'Информация о компании', component: CompanyInfo }
-      ],
-    };
-  },
+	name: 'Profile',
+	components: {
+		AccountInfo,
+		CompanyInfo
+	},
+	data () {
+		return {
+			tab: null,
+			icons: false,
+			centered: false,
+			grow: false,
+			vertical: false,
+			prevIcon: false,
+			nextIcon: false,
+			right: false,
+			tabs: [
+				{ name: 'Account', component: AccountInfo },
+				{ name: 'Информация о компании', component: CompanyInfo }
+			],
+		};
+	},
 };
 </script>
 

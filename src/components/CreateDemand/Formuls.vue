@@ -210,17 +210,17 @@
 
 <script>
 export default {
-  name: 'Formuls',
-  data() {
-    return {
-      sizes: ['mm', 'cm'],
-      fonts: [
-        'Arial',
-        'Calibri',
-      ],
-      fontSizes: [1, 5, 10, 15],
-    };
-  }
+	name: 'Formuls',
+	data() {
+		return {
+			sizes: ['mm', 'cm'],
+			fonts: [
+				'Arial',
+				'Calibri',
+			],
+			fontSizes: [1, 5, 10, 15],
+		};
+	}
 };
 </script>
 
