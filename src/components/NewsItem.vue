@@ -1,19 +1,25 @@
 <template>
-	<div class="column">
-		<router-link :to="{ path: `/news/${news.id}` }" class="post-module">
-			<div class="thumbnail">
-				<div class="date">
-					<span class="day">{{ format(new Date(news.created_at.date), 'dd', { locale: ru }) }}</span>
-					<span class="month">{{ format(new Date(news.created_at.date), 'MMM', { locale: ru }) }}</span>
-				</div>
-				<img :src="news.image.file_path" />
-			</div>
-			<div class="post-content">
-				<h1 class="sub_title">{{ news.title }}</h1>
-				<p class="description">{{ news.short_desc }}</p>
-			</div>
-		</router-link>
-	</div>
+  <div class="column">
+    <router-link
+      :to="{ path: `/news/${news.id}` }"
+      class="post-module">
+      <div class="thumbnail">
+        <div class="date">
+          <span class="day">{{ format(new Date(news.created_at.date), 'dd', { locale: ru }) }}</span>
+          <span class="month">{{ format(new Date(news.created_at.date), 'MMM', { locale: ru }) }}</span>
+        </div>
+        <img :src="news.image.file_path" >
+      </div>
+      <div class="post-content">
+        <h1 class="sub_title">
+          {{ news.title }}
+        </h1>
+        <p class="description">
+          {{ news.short_desc }}
+        </p>
+      </div>
+    </router-link>
+  </div>
 </template>
 
 <script>

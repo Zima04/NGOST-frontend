@@ -71,7 +71,6 @@ export default {
 		};
 	},
 	created() {
-		console.log('sss');
 		this.fetchData();
 	},
 	methods: {

@@ -1,11 +1,23 @@
 <template>
   <div class="container">
-    <template
-      v-for="(item, index) in news"
-    >
-      <NewsItem
-        :key="index"
-        :news="item" />
+    <template v-if="!isLoading">
+      <template v-for="(item, index) in news">
+        <NewsItem
+          :key="index"
+          :news="item" />
+      </template>
+    </template>
+    <template v-else-if="isLoading">
+      <div class="column">
+        <v-skeleton-loader
+          type="image, article"
+          width="100%" />
+      </div>
+      <div class="column">
+        <v-skeleton-loader
+          type="image, article"
+          width="100%" />
+      </div>
     </template>
   </div>
 </template>
@@ -16,13 +28,14 @@ import axios from 'axios';
 
 export default {
 	name: 'News',
+	inject: ['theme'],
 	components: {
 		NewsItem
 	},
 	data: () => ({
 		news: [],
 		isLoading: true,
-		errors: false,
+		errors: false
 	}),
 	created() {
 		this.fetchNews();
@@ -33,7 +46,7 @@ export default {
 				const response = await axios.get('/api/news');
 				this.news = response.data.response;
 				this.isLoading = false;
-			} catch(err) {
+			} catch (err) {
 				this.isLoading = false;
 				this.errors = true;
 			}
@@ -59,6 +72,18 @@ export default {
 	@media (min-width: 768px) and (max-width: 1280px) {
 		padding: 1rem;
 	}
-
+	.column {
+		width: 25%;
+		padding: 1rem;
+		box-sizing: border-box;
+		@media only screen and (max-width: 479px) {
+			width: 100%;
+			padding: 0.2rem;
+		}
+		@media (min-width: 481px) and (max-width: 1280px) {
+			width: 50%;
+			padding: 0.5rem;
+		}
+	}
 }
 </style>
