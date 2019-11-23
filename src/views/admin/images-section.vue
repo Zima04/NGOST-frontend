@@ -11,7 +11,7 @@
       v-if="value"
       class="white--text align-end"
       minheight="300px">
-      <img :src="value.path" >
+      <img :src="value" >
     </v-img>
     <v-card-text>
       <p v-if="!value">
@@ -40,7 +40,7 @@ export default {
 		'images-control': ImagesControl
 	},
 	props: {
-		value: Object
+		value: String
 	},
 	data: () => ({
 		imagesControl: false

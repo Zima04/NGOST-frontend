@@ -3,47 +3,59 @@
     <h1 class="headline">
       Создание новости
     </h1>
-    <form @submit.prevent="onSubmit">
+    <v-form
+      ref="form"
+      @submit.prevent="onSubmit">
       <div class="form-group">
         <v-text-field
           v-model="formData.title"
           label="Заголовок"
+          required
           :rules="required"
-          @input="$v.title.$touch()"
-          @blur="$v.title.$touch()"
         />
       </div>
       <div class="form-group">
         <v-text-field
           v-model="formData.short_desc"
           label="Краткое описание"
+          required
           :rules="required"
-          @input="$v.short_desc.$touch()"
-          @blur="$v.short_desc.$touch()"
         />
       </div>
       <div class="form-group">
         <v-file-input
           v-model="image_holder"
+          required
           label="Превью изображение"
-          accept="image/*" />
+          accept="image/*"
+          :rules="required"
+        />
       </div>
       <h2 class="headline">
         Содержмое новости
       </h2>
-      <div
-        v-for="(component, index) in formData.description"
-        :key="index"
-        class="form-group">
-        <template v-if="component.type === 'text'">
-          <tinymce-editor v-model="component.value" />
-        </template>
-        <template v-else-if="component.type === 'image'">
-          <images-section
-            :value="component.value"
-            @onChange="onChangeSection($event, index)" />
-        </template>
-      </div>
+      <v-expansion-panels
+        :multiple="true"
+      >
+        <v-expansion-panel
+          v-for="(component, index) in formData.description"
+          :key="index"
+        >
+          <v-expansion-panel-header>
+            Секция
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <template v-if="component.type === 'text'">
+              <tinymce-editor v-model="component.value" />
+            </template>
+            <template v-else-if="component.type === 'image'">
+              <images-section
+                :value="component.value"
+                @onChange="onChangeSection($event, index)" />
+            </template>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
       <div class="controls">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
@@ -66,14 +78,12 @@
           Сохранить
         </v-btn>
       </div>
-    </form>
+    </v-form>
   </div>
 </template>
 
 <script>
 import Editor from '@tinymce/tinymce-vue';
-import { validationMixin } from 'vuelidate';
-import { required, email } from 'vuelidate/lib/validators';
 import axios from 'axios';
 import ImagesControl from './images-control';
 import ImagesSection from './images-section';
@@ -84,12 +94,6 @@ export default {
 		'tinymce-editor': Editor,
 		'images-control': ImagesControl,
 		'images-section': ImagesSection
-	},
-	mixins: [validationMixin],
-	validations: {
-		title: { required },
-		description: { required },
-		short_desc: { required }
 	},
 	data: () => ({
 		formData: {
@@ -103,24 +107,28 @@ export default {
 		imagesControl: false
 	}),
 	created() {
-		if (this.$route.params.id) {
-			this.fetchData();
+		const id = this.$route.params.id;
+		if (id) {
+			this.fetchData(id);
 		}
 	},
 	methods: {
-		async fetchData() {
-			console.log(this.$route.params.id);
+		async fetchData(id) {
+			const response = await axios.get(`/api/news/${id}`);
 		},
 		async onSubmit() {
-			try {
-				let imageId = null;
-				if (this.image_holder) {
-					const imageResponse = await this.saveImage();
-					imageId = imageResponse.data.id;
+			if(this.$refs.form.validate()) {
+				try {
+					let imageId = null;
+					if (this.image_holder) {
+						const imageResponse = await this.saveImage();
+						imageId = imageResponse.data.id;
+					}
+					const response = await this.saveNews(imageId);
+					this.$refs.form.reset()
+				} catch (error) {
+					console.log(error);
 				}
-				const response = await this.saveNews(imageId);
-			} catch (error) {
-				console.log(error);
 			}
 		},
 		async saveNews(imageId) {

@@ -4,35 +4,53 @@
     persistent
     class="dialog">
     <v-card class="card-content">
-      <v-card-title class="headline">
-        Select image
+      <v-card-title class="title">
+        <h1 class="headline">
+          Select image
+        </h1>
+        <v-btn
+          small
+          color="primary"
+          @click="$refs.fileInput.click()">
+          Добавить
+        </v-btn>
+        <input
+          ref="fileInput"
+          style="display: none;"
+          type="file"
+          @change="uploadImage" >
       </v-card-title>
       <div class="images-list">
         <div
           v-for="(image, index) in images"
           :key="index"
           class="image"
-          :class="{ active: selectedImage.id === image.id }"
-          @click="selectedImage = image"
+          :class="{ active: selectedImage === image.path }"
+          @click="selectedImage = image.path"
         >
           <img
             alt="image"
             :src="image.path" >
         </div>
       </div>
+      <v-pagination
+        v-model="pagination.page"
+        :length="pagination.length"
+        :page="pagination.page"
+        :total-visible="pagination.totalVisible"
+      />
       <v-card-actions>
-        <v-spacer/>
+        <v-spacer />
         <v-btn
-          color="green darken-1"
           text
           @click="onClose">
-          Disagree
+          Отмена
         </v-btn>
         <v-btn
-          color="green darken-1"
+          color="primary"
           text
           @click="onSubmit">
-          Agree
+          Применить
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -47,18 +65,19 @@ export default {
 		isOpen: Boolean
 	},
 	data: () => ({
-		selectedImage: {},
+		selectedImage: null,
 		isLoading: true,
 		errors: false,
-		images: []
+		images: [],
+		image_holder: null,
+		pagination: {
+			length: 2,
+			page: 1,
+			totalVisible: 10
+		}
 	}),
 	async created() {
-		try {
-			const response = await this.getImages();
-			this.images = response.data.response;
-		} catch (err) {
-			this.errors = true;
-		}
+		this.getImages();
 	},
 	methods: {
 		onClose() {
@@ -68,13 +87,41 @@ export default {
 			this.$emit('onSelect', this.selectedImage);
 		},
 		async getImages() {
-			return axios.get('/api/media');
+			try {
+				const response = await axios.get('/api/media');
+				this.images = response.data.response;
+			} catch (err) {
+				this.errors = true;
+			}
+		},
+		async uploadImage(e) {
+			const input = this.$refs.fileInput
+			const image = input.files[0];
+			if (!image || image.type.indexOf('image/') < 0) {
+				return;
+			}
+			this.isLoading = true;
+			const formData = new FormData();
+			formData.append('file', image);
+			await axios.post('/api/media', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			});
+			input.type = 'text';
+			input.type = 'file';
+			this.getImages();
 		}
 	}
 };
 </script>
 
 <style lang="scss" scoped>
+.title {
+	> button {
+		margin-left: 1rem;
+	}
+}
 .card-content {
 	height: 90vh;
 	width: 100%;

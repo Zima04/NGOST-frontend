@@ -89,8 +89,8 @@ export default {
 		async getNews() {
 			return axios.get('/api/news');
 		},
-		async editNews() {
-
+		async editNews(item) {
+			this.$router.push({ path: `news/edit/${item.id}` })
 		},
 		async deleteNews(news) {
 			this.isLoading = true;
