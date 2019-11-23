@@ -44,6 +44,14 @@ export default new Router({
 			meta: {
 				title: 'Новости'
 			},
+			component: () => import('@/views/news-list')
+		},
+		{
+			name: 'news',
+			path: '/news/:id',
+			meta: {
+				title: 'Новость'
+			},
 			component: () => import('@/views/news')
 		},
 		{

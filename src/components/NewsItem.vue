@@ -1,50 +1,34 @@
 <template>
-  <div class="column">
-    <div class="post-module">
-      <div class="thumbnail">
-        <div
-          v-if="!isEdit"
-          class="date">
-          <span class="day">27</span>
-          <span class="month">Mar</span>
-        </div>
-        <div
-          v-if="isEdit"
-          class="date">
-          <v-btn
-            text
-            icon
-            color="white">
-            <v-icon>mdi-pencil</v-icon>
-          </v-btn>
-        </div>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" >
-      </div>
-      <div class="post-content">
-        <div class="category">
-          Photos
-        </div>
-        <h1 class="title">
-          City Lights in New York
-        </h1>
-        <h2 class="sub_title">
-          The city that never sleeps.
-        </h2>
-        <p class="description">
-          New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments,
-          magnificent buildings and countless dazzling skyscrapers.
-        </p>
-      </div>
-    </div>
-  </div>
+	<div class="column">
+		<router-link :to="{ path: `/news/${news.id}` }" class="post-module">
+			<div class="thumbnail">
+				<div class="date">
+					<span class="day">{{ format(new Date(news.created_at.date), 'dd', { locale: ru }) }}</span>
+					<span class="month">{{ format(new Date(news.created_at.date), 'MMM', { locale: ru }) }}</span>
+				</div>
+				<img :src="news.image.file_path" />
+			</div>
+			<div class="post-content">
+				<h1 class="sub_title">{{ news.title }}</h1>
+				<p class="description">{{ news.short_desc }}</p>
+			</div>
+		</router-link>
+	</div>
 </template>
 
 <script>
+import { format } from 'date-fns';
+import { ru } from 'date-fns/locale'
+
 export default {
 	name: 'NewsItem',
 	props: {
-		isEdit: Boolean
-	}
+		news: Object
+	},
+	data: () => ({
+		format,
+		ru
+	})
 };
 </script>
 
@@ -211,6 +195,5 @@ $light_gray: lighten($black, 60%);
 		width: 50%;
 		padding: 0.5rem;
 	}
-
 }
 </style>
